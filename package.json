@@ -41,6 +41,7 @@
     "sass": "^1.52.3",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.5",
+    "tw-elements": "^1.0.0-alpha13",
     "url-loader": "^4.1.1"
   },
   "devDependencies": {

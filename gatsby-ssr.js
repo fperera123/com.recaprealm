@@ -14,3 +14,14 @@ export function wrapPageElement({ element, props }) {
 export const wrapRootElement = ({ element }) => (
   <GlobalHeaderProvider>{element}</GlobalHeaderProvider>
 );
+
+export const onRenderBody = ({ setPostBodyComponents }) => {
+  setPostBodyComponents([
+    <script
+      key="./node_modules/tw-elements/dist/js/index.min.js"
+      src="./node_modules/tw-elements/dist/js/index.min.js"
+      crossOrigin="anonymous"
+      defer
+    />,
+  ])
+}
