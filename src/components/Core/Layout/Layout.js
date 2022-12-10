@@ -11,7 +11,7 @@ export default function Layout({
           <title>Fastland Gatsby Landing Template</title>
           <link rel="icon" type="image/png" href={favicon} />
     </Helmet>
-      <Header/>
+      {/* <Header/> */}
       {children}
     </>
   )
