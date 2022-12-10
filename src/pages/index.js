@@ -8,6 +8,7 @@ import ContentWithImage from "@/sections/slices/ContentWithImage";
 import ContentWithImageAndList from "@/sections/slices/ContentWithImageAndList";
 import ContentPlain from "@/sections/slices/ContentPlain";
 import Reviews from "@/sections/slices/Reviews";
+import Footer from "@/sections/Footer";
 
 const header = {
   headerClasses: "site-header site-header--menu-start light-header site-header--sticky",
@@ -32,6 +33,7 @@ export default function IndexPage() {
       <ContentWithImageAndList />
       <ContentPlain/>
       <Reviews/>
+      <Footer/>
     </PageWrapper>
   )
 }

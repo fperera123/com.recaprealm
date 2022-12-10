@@ -6,7 +6,7 @@ import Content from "../contentStyles"
 export default function ContentWithImageAndList() {
   return (
     <>
-      <div className='flex p-4 w-full flex-col flex-wrap max-w-[50%] items-center'>
+      <div className='flex p-4 w-full flex-col flex-wrap max-w-[50%] min-w-[300px] items-center'>
         <div className="mb-2 text-center">
           <Content.Title as="h1">
             Get instant  growth result for business.
