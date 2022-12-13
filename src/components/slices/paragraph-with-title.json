@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_slices_paragraph_with_title_s",
+  "info": {
+    "displayName": "Paragraph with Title ",
+    "icon": "ad"
+  },
+  "options": {},
+  "attributes": {
+    "paragraphBody": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.title-and-text"
+    }
+  }
+}
