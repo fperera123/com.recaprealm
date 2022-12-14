@@ -1,4 +1,26 @@
 const path = require(`path`)
+
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
+const strapiConfig = {
+  apiURL: process.env.STRAPI_API_URL,
+  accessToken: process.env.STRAPI_TOKEN,
+  // collectionTypes: ['universal'],
+  collectionTypes: [{
+    singularName: 'universal',
+    queryParams: {
+      populate: {
+        'slices': {
+          populate: "*"
+        },
+      },
+    },
+  }],
+  singleTypes: [],
+};
+
 module.exports = {
   siteMetadata: {
     title: `Shade Gatsby`,
@@ -24,12 +46,16 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: path.join(__dirname, `src`, `assets`,`image`),
+        path: path.join(__dirname, `src`, `assets`, `image`),
         // `${__dirname}/src/assets/image`
       },
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-background-image`,
+    {
+      resolve: `gatsby-source-strapi`,
+      options: strapiConfig,
+    },
   ],
 }
