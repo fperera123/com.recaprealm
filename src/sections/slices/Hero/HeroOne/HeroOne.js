@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function HeroSection() {
+export default function HeroOne() {
   return (
     <div
       id="carouselDarkVariant"

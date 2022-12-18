@@ -3,7 +3,7 @@ import { PageWrapper } from "~components"
 import HeaderButton from '~sections/slices/Header'
 import { Link } from '~components'
 import 'tw-elements';
-import HeroSection from "@/sections/slices/Hero/HeroSection";
+import HeroSection from "@/sections/slices/Hero/HeroOne";
 import ContentWithImage from "@/sections/slices/ContentWithImage";
 import ContentWithImageAndList from "@/sections/slices/ContentWithImageAndList";
 import ContentPlain from "@/sections/slices/ContentPlain";
@@ -28,12 +28,12 @@ const header = {
 export default function IndexPage() {
   return (
     <PageWrapper>
-      <HeroSection />
+      {/* <HeroSection />
       <ContentWithImage />
       <ContentWithImageAndList />
       <ContentPlain/>
       <Reviews/>
-      <Footer/>
+      <Footer/> */}
     </PageWrapper>
   )
 }
