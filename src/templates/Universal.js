@@ -41,6 +41,22 @@ export const query = graphql`
                 imageAlt
             }
           }
+          ... on STRAPI__COMPONENT_SLICES_CONTENT_WITH_IMAGE {
+            __typename
+            contentWithImageTitleParagraphImage: titleParagraphImage{
+                title
+                paragraph
+                titleHtmlTag
+                image {
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData
+                      }
+                    }
+                  }
+                imageAlt
+            }
+          }
       }
     }
   }
@@ -68,31 +84,31 @@ export const query = graphql`
 
 
 export default function Home({ data: { universal: { slices, slug } } }) {
-    return (
-        <PageWrapper>
-            {slices.map(slice => {
-                console.log(slice)
-                switch (slice.__typename) {
-                    case "STRAPI__COMPONENT_SLICES_PARAGRAPH_WITH_TITLE":
-                        return <ContentPlain key={slice.__typename} data={slice} />
+  return (
+    <PageWrapper>
+      {slices.map(slice => {
+        console.log(slice)
+        switch (slice.__typename) {
+          case "STRAPI__COMPONENT_SLICES_PARAGRAPH_WITH_TITLE":
+            return <ContentPlain key={slice.__typename} data={slice} />
 
-                    case "STRAPI__COMPONENT_SLICES_HERO_ONE":
-                        return <HeroOne key={slice.__typename} data={slice} />
+          case "STRAPI__COMPONENT_SLICES_HERO_ONE":
+            return <HeroOne key={slice.__typename} data={slice} />
 
-                    case "STRAPI__COMPONENT_SLICES_PARAGRAPH_WITH_TITLE":
-                        return <ContentWithImage key={slice.__typename} data={slice} />
+          case "STRAPI__COMPONENT_SLICES_CONTENT_WITH_IMAGE":
+            return <ContentWithImage key={slice.__typename} data={slice} />
 
-                    case "STRAPI__COMPONENT_SLICES_PARAGRAPH_WITH_TITLE":
-                        return <ContentWithImageAndList key={slice.__typename} data={slice} />
+          case "STRAPI__COMPONENT_SLICES_PARAGRAPH_WITH_TITLE":
+            return <ContentWithImageAndList key={slice.__typename} data={slice} />
 
-                    case "STRAPI__COMPONENT_SLICES_PARAGRAPH_WITH_TITLE":
-                        return <Reviews key={slice.__typename} data={slice} />
+          case "STRAPI__COMPONENT_SLICES_PARAGRAPH_WITH_TITLE":
+            return <Reviews key={slice.__typename} data={slice} />
 
-                    default:
-                        return null;
-                }
-            })}
-            <Footer />
-        </PageWrapper>
-    )
+          default:
+            return null;
+        }
+      })}
+      <Footer />
+    </PageWrapper>
+  )
 }

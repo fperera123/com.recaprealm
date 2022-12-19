@@ -1,26 +1,24 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-import { StaticImage as Img } from "gatsby-plugin-image"
+import { GatsbyImage as Img, getImage } from 'gatsby-plugin-image'
+
 import Content from "../contentStyles"
 
-export default function ContentWithImage() {
+export default function ContentWithImage({ data: { contentWithImageTitleParagraphImage } }) {
+  const { title, paragraph, titleHtmlTag, image, imageAlt } = contentWithImageTitleParagraphImage
+
   return (
     <>
       <div className='flex p-4 w-full flex-row flex-wrap md:!flex-nowrap'>
         <div className='max-w-[320px] w-full m-auto md:!m-0'>
-          <Img
-            src="./../../../assets/image/marketing/l1-contentOne-img-woman.png"
-            layout="fullWidth"
-            alt="content image"
-          />
+          <Img image={getImage(image.localFile)} alt={imageAlt} layout="fullWidth" />
         </div>
         <div className='p-4'>
-          <Content.Title as="h1">
-            Get instant  growth result for business.
+          <Content.Title as={titleHtmlTag}>
+            {title}
           </Content.Title>
           <Content.Text>
-            Create custom landing pages
-            with Fastland that converts more visitors than any website. Easy, Reliable &amp; Fast. The best medicines &amp; biggest brands within 30 minutes at your home.
+            {paragraph}
           </Content.Text>
         </div>
       </div>
