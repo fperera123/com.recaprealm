@@ -45,7 +45,7 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     `).then(result => {
-      console.log(result);
+    console.log(result);
     // Create pages for each universal.
     result.data.allStrapiUniversal.edges.forEach(({ node }) => {
       const pagePath = node.slug == "#home" ? '/' : node.slug;

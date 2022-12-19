@@ -13,7 +13,14 @@ const strapiConfig = {
     queryParams: {
       populate: {
         'slices': {
-          populate: "*"
+          populate: {
+            titleParagraph: {
+              populate: '*',
+            },
+            titleParagraphImage: {
+              populate: '*',
+            }
+          }
         },
       },
     },

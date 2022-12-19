@@ -4,7 +4,7 @@ import { PageWrapper } from "~components/Core";
 import _ from "lodash";
 import { Link } from '~components'
 import 'tw-elements';
-import HeroOneSection from "@/sections/slices/Hero/HeroOne";
+import HeroOne from "@/sections/slices/Hero/HeroOne";
 import ContentWithImage from "@/sections/slices/ContentWithImage";
 import ContentWithImageAndList from "@/sections/slices/ContentWithImageAndList";
 import ContentPlain from "@/sections/slices/ContentPlain";
@@ -17,12 +17,28 @@ export const query = graphql`
       id
       slug
       slices {
-        ... on STRAPI__COMPONENT_SLICES_PARAGRAPH_WITH_TITLE {
+        ... on STRAPI__COMPONENT_SLICES_PARAGRAPH_WITH_TITLE  {
             __typename
             titleParagraph{
                 title
                 paragraph
                 titleHtmlTag
+            }
+          }
+        ... on STRAPI__COMPONENT_SLICES_HERO_ONE {
+            __typename
+            titleParagraphImage{
+                title
+                paragraph
+                titleHtmlTag
+                image {
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData
+                      }
+                    }
+                  }
+                imageAlt
             }
           }
       }
@@ -61,7 +77,7 @@ export default function Home({ data: { universal: { slices, slug } } }) {
                         return <ContentPlain key={slice.__typename} data={slice} />
 
                     case "STRAPI__COMPONENT_SLICES_HERO_ONE":
-                        return <HeroOneSection key={slice.__typename} data={slice} />
+                        return <HeroOne key={slice.__typename} data={slice} />
 
                     case "STRAPI__COMPONENT_SLICES_PARAGRAPH_WITH_TITLE":
                         return <ContentWithImage key={slice.__typename} data={slice} />

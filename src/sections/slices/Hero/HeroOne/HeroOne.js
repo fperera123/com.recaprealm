@@ -1,6 +1,8 @@
 import React from 'react'
+import { GatsbyImage as Img, getImage } from 'gatsby-plugin-image'
+import Content from "../../contentStyles"
 
-export default function HeroOne() {
+export default function HeroOne({ data: { titleParagraphImage } }) {
   return (
     <div
       id="carouselDarkVariant"
@@ -28,41 +30,24 @@ export default function HeroOne() {
       </div>
 
       <div className="carousel-inner relative w-full overflow-hidden">
-        <div className="carousel-item active relative float-left w-full">
-          <img
-            src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(19).webp"
-            className="block w-full"
-            alt="Motorbike Smoke"
-          />
-          <div className="carousel-caption hidden md:block absolute text-center">
-            <h5 className="text-xl">First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
-          </div>
-        </div>
+        {
+          titleParagraphImage.map((node, index) => {
+            const { title, paragraph, titleHtmlTag, image, imageAlt } = node
 
-        <div className="carousel-item relative float-left w-full">
-          <img
-            src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(35).webp"
-            className="block w-full"
-            alt="Mountaintop"
-          />
-          <div className="carousel-caption hidden md:block absolute text-center">
-            <h5 className="text-xl">Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
-          </div>
-        </div>
+            return <div key={index} className={"carousel-item relative float-left w-full " + (index == 0 ? 'active' : '')} >
+              <Img image={getImage(image.localFile)} alt={imageAlt} layout="fullWidth" placeholder="blurred" />
+              <div className="carousel-caption hidden md:block absolute text-center">
+                <Content.Title as={titleHtmlTag}>
+                  {title}
+                </Content.Title>
+                <Content.Text>
+                  {paragraph}
+                </Content.Text>
+              </div>
+            </div>
+          })
+        }
 
-        <div className="carousel-item relative float-left w-full">
-          <img
-            src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(40).webp"
-            className="block w-full"
-            alt="Woman Reading a Book"
-          />
-          <div className="carousel-caption hidden md:block absolute text-center">
-            <h5 className="text-xl">Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
-          </div>
-        </div>
       </div>
       <button
         className="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
