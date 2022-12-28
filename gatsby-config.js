@@ -19,7 +19,13 @@ const strapiConfig = {
             },
             titleParagraphImage: {
               populate: '*',
-            }
+            },
+            titleParagraphImage: {
+              populate: '*',
+            },
+            unorderedList:{
+              populate: '*',
+            },
           }
         },
       },

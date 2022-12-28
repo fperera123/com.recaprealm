@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from './style'
-export default function TestiomialCard({ userName, userPosition, text, image, ...rest }) {
+export default function TestimonialCard({ userName, userPosition, text, image, ...rest }) {
   return (
     <Card backgroundColor="#fff">
       <Card.Image>

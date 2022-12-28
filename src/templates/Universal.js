@@ -57,6 +57,34 @@ export const query = graphql`
                 imageAlt
             }
           }
+          ... on STRAPI__COMPONENT_SLICES_CONTENT_WITH_IMAGE_AND_LIST{
+            __typename
+            contentWithImageTitleParagraphImage: titleParagraphImage{
+                title
+                paragraph
+                titleHtmlTag
+                image {
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData
+                      }
+                    }
+                  }
+                imageAlt
+            }
+            unorderedList {
+              text
+              icon
+            }
+          }
+          ... on STRAPI__COMPONENT_SLICES_REVIEW_ONE {
+            __typename
+            text
+            customerName
+            customerPosition
+            image
+            imageAlt
+          }
       }
     }
   }
@@ -98,10 +126,10 @@ export default function Home({ data: { universal: { slices, slug } } }) {
           case "STRAPI__COMPONENT_SLICES_CONTENT_WITH_IMAGE":
             return <ContentWithImage key={slice.__typename} data={slice} />
 
-          case "STRAPI__COMPONENT_SLICES_PARAGRAPH_WITH_TITLE":
+          case "STRAPI__COMPONENT_SLICES_CONTENT_WITH_IMAGE_AND_LIST":
             return <ContentWithImageAndList key={slice.__typename} data={slice} />
 
-          case "STRAPI__COMPONENT_SLICES_PARAGRAPH_WITH_TITLE":
+          case "STRAPI__COMPONENT_SLICES_CONTENT_WITH_IMAGE_AND_LIST":
             return <Reviews key={slice.__typename} data={slice} />
 
           default:
