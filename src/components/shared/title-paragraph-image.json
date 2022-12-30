@@ -1,8 +1,8 @@
 {
-  "collectionName": "components_shared_title_and_texts",
+  "collectionName": "components_shared_title_paragraph_images",
   "info": {
-    "displayName": "Title and Paragraph",
-    "icon": "ad",
+    "displayName": "Title Paragraph Image",
+    "icon": "address-card",
     "description": ""
   },
   "options": {},
@@ -12,6 +12,17 @@
     },
     "paragraph": {
       "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "titleHtmlTag": {
       "type": "enumeration",
@@ -26,6 +37,9 @@
         "div",
         "span"
       ]
+    },
+    "imageAlt": {
+      "type": "string"
     }
   }
 }

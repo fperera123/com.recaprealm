@@ -16,7 +16,14 @@ module.exports = createCoreController('api::universal.universal', ({ strapi }) =
             ...query,
             populate: {
                 'slices': {
-                    populate: '*',
+                    populate: {
+                        titleParagraph: {
+                            populate: '*',
+                        },
+                        titleParagraphImage: {
+                            populate: '*',
+                        }
+                    }
                 }
             },
         });

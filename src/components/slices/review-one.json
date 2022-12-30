@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_slices_review_ones",
+  "info": {
+    "displayName": "Review One",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "ReviewOneItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.review-one"
+    }
+  }
+}

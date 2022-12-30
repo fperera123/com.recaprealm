@@ -4,7 +4,8 @@
   "info": {
     "singularName": "universal",
     "pluralName": "universals",
-    "displayName": "Universal"
+    "displayName": "Universal",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,7 +15,11 @@
     "slices": {
       "type": "dynamiczone",
       "components": [
-        "slices.paragraph-with-title"
+        "slices.paragraph-with-title",
+        "slices.hero-one",
+        "slices.content-with-image",
+        "slices.content-with-image-and-list",
+        "shared.review-one"
       ],
       "required": true
     },

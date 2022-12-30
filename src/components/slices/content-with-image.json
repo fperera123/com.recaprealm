@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_slices_content_with_images",
+  "info": {
+    "displayName": "Content With Image",
+    "icon": "ad"
+  },
+  "options": {},
+  "attributes": {
+    "titleParagraphImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.title-paragraph-image"
+    }
+  }
+}

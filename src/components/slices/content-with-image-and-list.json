@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_slices_content_with_image_and_lists",
+  "info": {
+    "displayName": "Content With Image And List",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titleParagraphImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.title-paragraph-image"
+    },
+    "unorderedList": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.unordered-list-item"
+    }
+  }
+}

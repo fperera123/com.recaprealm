@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_slices_hero_ones",
+  "info": {
+    "displayName": "Hero One",
+    "icon": "border-all",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titleParagraphImage": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.title-paragraph-image"
+    }
+  }
+}
