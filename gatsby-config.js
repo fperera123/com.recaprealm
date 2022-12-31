@@ -10,6 +10,11 @@ const strapiConfig = {
   // collectionTypes: ['universal'],
   collectionTypes: [{
     singularName: 'universal',
+    pluginOptions: {
+      i18n: {
+        locale: 'all', // Fetch all localizations
+      },
+    },
     queryParams: {
       populate: {
         'slices': {
@@ -23,7 +28,7 @@ const strapiConfig = {
             titleParagraphImage: {
               populate: '*',
             },
-            unorderedList:{
+            unorderedList: {
               populate: '*',
             },
             reviewOneItem: {

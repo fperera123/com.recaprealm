@@ -48,7 +48,16 @@ exports.createPages = ({ actions, graphql }) => {
     console.log(result);
     // Create pages for each universal.
     result.data.allStrapiUniversal.edges.forEach(({ node }) => {
-      const pagePath = node.slug == "#home" ? '/' : node.slug;
+      let pagePath = ''
+      if (node.slug == '#home') {
+        pagePath = '/'
+      }
+      else if (node.slug == '#home-en') {
+        pagePath = '/en/'
+      }
+      else {
+        pagePath = node.slug;
+      }
       createPage({
         path: pagePath,
         component: path.resolve(`src/templates/Universal.js`),
