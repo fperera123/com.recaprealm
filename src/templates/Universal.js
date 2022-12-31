@@ -10,6 +10,7 @@ import ContentWithImageAndList from "@/sections/slices/ContentWithImageAndList";
 import ContentPlain from "@/sections/slices/ContentPlain";
 import Reviews from "@/sections/slices/Reviews";
 import Footer from "@/sections/Footer";
+import ContactOne from "@/sections/slices/Contact/ContactOne";
 
 export const query = graphql`
   query GetSingleUniversal($slug: String){
@@ -137,8 +138,11 @@ export default function Home({ data: { universal: { slices, slug } } }) {
           case "STRAPI__COMPONENT_SLICES_CONTENT_WITH_IMAGE_AND_LIST":
             return <ContentWithImageAndList key={slice.__typename} data={slice} />
 
+          {/* case "STRAPI__COMPONENT_SLICES_REVIEW_ONE":
+            return <Reviews key={slice.__typename} data={slice} /> */}
+
           case "STRAPI__COMPONENT_SLICES_REVIEW_ONE":
-            return <Reviews key={slice.__typename} data={slice} />
+            return <ContactOne key={slice.__typename} data={slice} />
 
           default:
             return null;
