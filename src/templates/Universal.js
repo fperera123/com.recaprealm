@@ -79,11 +79,19 @@ export const query = graphql`
           }
           ... on STRAPI__COMPONENT_SLICES_REVIEW_ONE {
             __typename
+           reviewOneItem{
             text
             customerName
             customerPosition
-            image
+            image {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+            }
             imageAlt
+           }
           }
       }
     }
@@ -129,7 +137,7 @@ export default function Home({ data: { universal: { slices, slug } } }) {
           case "STRAPI__COMPONENT_SLICES_CONTENT_WITH_IMAGE_AND_LIST":
             return <ContentWithImageAndList key={slice.__typename} data={slice} />
 
-          case "STRAPI__COMPONENT_SLICES_CONTENT_WITH_IMAGE_AND_LIST":
+          case "STRAPI__COMPONENT_SLICES_REVIEW_ONE":
             return <Reviews key={slice.__typename} data={slice} />
 
           default:

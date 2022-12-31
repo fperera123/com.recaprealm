@@ -26,6 +26,9 @@ const strapiConfig = {
             unorderedList:{
               populate: '*',
             },
+            reviewOneItem: {
+              populate: '*',
+            },
           }
         },
       },
