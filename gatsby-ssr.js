@@ -6,6 +6,7 @@ import { GlobalHeaderProvider } from "./src/context/GlobalHeaderContext";
 import "./src/styles/scss/bootstrap.scss";
 import "./src/styles/scss/global.scss";
 
+
 export function wrapPageElement({ element, props }) {
   return <Layout {...props}>{element}</Layout>
 }

@@ -11,6 +11,8 @@ import ContentPlain from "@/sections/slices/ContentPlain";
 import Reviews from "@/sections/slices/Reviews";
 import Footer from "@/sections/Footer";
 import ContactOne from "@/sections/slices/Contact/ContactOne";
+import Navbar from "@/sections/Navbar";
+import TopBar from "@/sections/TopBar";
 
 export const query = graphql`
   query GetSingleUniversal($slug: String){
@@ -123,6 +125,8 @@ export const query = graphql`
 export default function Home({ data: { universal: { slices, slug } } }) {
   return (
     <PageWrapper>
+      <TopBar/>
+      {/* <Navbar/> */}
       {slices.map(slice => {
         console.log(slice)
         switch (slice.__typename) {
@@ -138,8 +142,8 @@ export default function Home({ data: { universal: { slices, slug } } }) {
           case "STRAPI__COMPONENT_SLICES_CONTENT_WITH_IMAGE_AND_LIST":
             return <ContentWithImageAndList key={slice.__typename} data={slice} />
 
-          {/* case "STRAPI__COMPONENT_SLICES_REVIEW_ONE":
-            return <Reviews key={slice.__typename} data={slice} /> */}
+          case "STRAPI__COMPONENT_SLICES_REVIEW_ONE":
+            return <Reviews key={slice.__typename} data={slice} />
 
           case "STRAPI__COMPONENT_SLICES_REVIEW_ONE":
             return <ContactOne key={slice.__typename} data={slice} />
