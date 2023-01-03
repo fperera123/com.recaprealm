@@ -126,7 +126,7 @@ export default function Home({ data: { universal: { slices, slug } } }) {
   return (
     <PageWrapper>
       <TopBar/>
-      {/* <Navbar/> */}
+      <Navbar/>
       {slices.map(slice => {
         console.log(slice)
         switch (slice.__typename) {

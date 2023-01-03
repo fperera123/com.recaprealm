@@ -1,0 +1,56 @@
+@import '@/styles/scss/_variables.scss';
+
+.navbar-nav {
+    .nav-item {
+        width: 100%;
+        border-radius: 0.5rem;
+        background-color: $white;
+
+        a {
+            width: 100%;
+            color: $black;
+            padding: 0.75rem;
+        }
+
+        :hover {
+            background-color: $primary;
+            border-radius: 0.5rem;
+        }
+
+        a:hover {
+            color: $lightShade
+        }
+
+        &.active {
+            background-color: $primary;
+
+            a {
+                color: $lightShade;
+            }
+        }
+    }
+}
+
+// md
+@media(min-width: $screen-md) {
+    .navbar-nav {
+        .nav-item {
+
+            :hover {
+                background-color: initial;
+            }
+
+            a:hover {
+                color: $primary;
+            }
+
+            &.active {
+                background-color: initial;
+
+                a {
+                    color: $black;
+                }
+            }
+        }
+    }
+}
