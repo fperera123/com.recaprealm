@@ -6,43 +6,43 @@ const Content = styled(Box)``;
 
 Content.Title = styled(Heading)`
   ${(props) =>
-        props.as === "h1" &&
-        css`
+    props.as === "h1" &&
+    css`
       font-size: 3rem;
       font-weight: 700;
     `}
 
   ${(props) =>
-        props.as === "h2" &&
-        css`
+    props.as === "h2" &&
+    css`
       font-size: 2.5rem;
       font-weight: 600;
     `}
 
     ${(props) =>
-        props.as === "h3" &&
-        css`
+    props.as === "h3" &&
+    css`
       font-size: 2.125rem;
       font-weight: 600;
     `}
 
     ${(props) =>
-        props.as === "h4" &&
-        css`
+    props.as === "h4" &&
+    css`
       font-size: 1.5rem;
       font-weight: 600;
     `}
 
     ${(props) =>
-        props.as === "h5" &&
-        css`
+    props.as === "h5" &&
+    css`
       font-size: 1.3125rem;
       font-weight: 600;
     `}
 
     ${(props) =>
-        props.as === "h6" &&
-        css`
+    props.as === "h6" &&
+    css`
       font-size: 1rem;
       font-weight: 600;
     `}
@@ -50,11 +50,12 @@ Content.Title = styled(Heading)`
 `;
 Content.Text = styled(Paragraph)`
   ${(props) =>
-        props.as === "p" &&
-        css`
+    props.as === "p" &&
+    css`
       font-size: 1rem;
       font-weight: 400;
       color: #000;
+      text-align: justify;
     `}
 `;
 
@@ -63,15 +64,7 @@ Content.List = styled(Box)`
     padding-left: 30px;
     position: relative;
     list-style: none;
-    &::before {
-      content: "\f00c";
-      font-family: "Font Awesome 5 Pro";
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-weight: 700;
-      color: #5034fc;
-    }
+    color: #000;
   }
 `;
 

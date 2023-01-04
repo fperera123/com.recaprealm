@@ -9,15 +9,15 @@ export default function ContentWithImage({ data: { contentWithImageTitleParagrap
 
   return (
     <>
-      <div className='flex p-4 w-full flex-row flex-wrap md:!flex-nowrap'>
-        <div className='max-w-[320px] w-full m-auto md:!m-0'>
+      <div className='flex p-4 w-full flex-row flex-wrap items-center md:!flex-nowrap'>
+        <div className='max-w-[640px] w-full rounded-md border-secondaryShade border-solid border-6 m-auto md:!m-0'>
           <Img image={getImage(image.localFile)} alt={imageAlt} layout="fullWidth" />
         </div>
         <div className='p-4'>
           <Content.Title as={titleHtmlTag}>
             {title}
           </Content.Title>
-          <Content.Text>
+          <Content.Text as='p'>
             {paragraph}
           </Content.Text>
         </div>
