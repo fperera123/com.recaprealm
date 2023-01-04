@@ -6,7 +6,7 @@ export default function HeroOne({ data: { titleParagraphImage } }) {
   return (
     <div
       id="carouselDarkVariant"
-      className="carousel slide carousel-fade carousel-dark relative"
+      className="carousel slide carousel-fade relative"
       data-bs-ride="carousel"
     >
       <div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
@@ -29,18 +29,18 @@ export default function HeroOne({ data: { titleParagraphImage } }) {
         ></button>
       </div>
 
-      <div className="carousel-inner relative w-full overflow-hidden">
+      <div className="carousel-inner relative w-full overflow-hidden h-[calc(100vw*9/16-9rem)] min-h-[10rem]">
         {
           titleParagraphImage.map((node, index) => {
             const { title, paragraph, titleHtmlTag, image, imageAlt } = node
 
-            return <div key={index} className={"carousel-item relative float-left w-full " + (index == 0 ? 'active' : '')} >
-              <Img image={getImage(image.localFile)} alt={imageAlt} layout="fullWidth" placeholder="blurred" />
+            return <div key={index} className={"carousel-item relative float-left w-full h-full " + (index == 0 ? 'active' : '')} >
+              <Img className='w-full h-full brightness-50 0' image={getImage(image.localFile)} alt={imageAlt} layout="fullWidth" placeholder="blurred" />
               <div className="carousel-caption hidden md:block absolute text-center">
-                <Content.Title as={titleHtmlTag}>
+                <Content.Title as={titleHtmlTag} className="!text-secondaryShade">
                   {title}
                 </Content.Title>
-                <Content.Text>
+                <Content.Text as="p" className='text-lightShade'>
                   {paragraph}
                 </Content.Text>
               </div>

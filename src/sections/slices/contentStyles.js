@@ -1,28 +1,78 @@
-import styled from "styled-components/macro"
-import { Box, Heading, Paragraph } from "~styled"
+import styled from "styled-components/macro";
+import { Box, Heading, Paragraph } from "~styled";
+import { css } from "styled-components";
 
-const Content = styled(Box)`
-`
+const Content = styled(Box)``;
+
 Content.Title = styled(Heading)`
-`
+  ${(props) =>
+        props.as === "h1" &&
+        css`
+      font-size: 3rem;
+      font-weight: 700;
+    `}
+
+  ${(props) =>
+        props.as === "h2" &&
+        css`
+      font-size: 2.5rem;
+      font-weight: 600;
+    `}
+
+    ${(props) =>
+        props.as === "h3" &&
+        css`
+      font-size: 2.125rem;
+      font-weight: 600;
+    `}
+
+    ${(props) =>
+        props.as === "h4" &&
+        css`
+      font-size: 1.5rem;
+      font-weight: 600;
+    `}
+
+    ${(props) =>
+        props.as === "h5" &&
+        css`
+      font-size: 1.3125rem;
+      font-weight: 600;
+    `}
+
+    ${(props) =>
+        props.as === "h6" &&
+        css`
+      font-size: 1rem;
+      font-weight: 600;
+    `}
+    color:#000;
+`;
 Content.Text = styled(Paragraph)`
-`
+  ${(props) =>
+        props.as === "p" &&
+        css`
+      font-size: 1rem;
+      font-weight: 400;
+      color: #000;
+    `}
+`;
 
 Content.List = styled(Box)`
-li {
+  li {
     padding-left: 30px;
     position: relative;
     list-style: none;
-    &::before{
-        content: "\f00c";
-        font-family: 'Font Awesome 5 Free';
-        position: absolute;
-        left: 0;
-        top: 0;
-        font-weight: 700;
-        color:#5034fc;
+    &::before {
+      content: "\f00c";
+      font-family: "Font Awesome 5 Pro";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: 700;
+      color: #5034fc;
     }
-}
-`
+  }
+`;
 
-export default Content
+export default Content;
