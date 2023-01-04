@@ -6,7 +6,7 @@ export default function ContentWithImageAndList({ data: { contentWithImageTitleP
   const { title, paragraph, titleHtmlTag, image, imageAlt } = contentWithImageTitleParagraphImage
   return (
     <>
-      <div className='flex p-4 w-full flex-col flex-wrap max-w-[50%] min-w-[300px] items-center'>
+      <div className='container flex p-4 w-full flex-col flex-wrap max-w-[50%] min-w-[300px] items-center'>
         <div className="mb-2">
           <Content.Title as={titleHtmlTag} className='text-center'>
             {title}

@@ -5,7 +5,7 @@ export default function ContentPlain({ data: { titleParagraph } }) {
   const { title, paragraph, titleHtmlTag } = titleParagraph;
   return (
     <>
-      <div className='flex p-4 w-full flex-col flex-wrap'>
+      <div className='flex p-4 w-full flex-col flex-wrap container'>
         <Content.Title as={titleHtmlTag} className="text-center">
           {title}
         </Content.Title>
