@@ -145,13 +145,14 @@ export default function Home({ data: { universal: { slices, slug } } }) {
           case "STRAPI__COMPONENT_SLICES_REVIEW_ONE":
             return <Reviews key={slice.__typename} data={slice} />
 
-          case "STRAPI__COMPONENT_SLICES_REVIEW_ONE":
-            return <ContactOne key={slice.__typename} data={slice} />
+          {/* case "STRAPI__COMPONENT_SLICES_REVIEW_ONE":
+            return <ContactOne key={slice.__typename} data={slice} /> */}
 
           default:
             return null;
         }
       })}
+      <ContactOne/>
       <Footer />
     </PageWrapper>
   )

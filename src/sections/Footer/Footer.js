@@ -2,14 +2,14 @@ import React from 'react'
 import { Link } from '@/components'
 
 const copyRightYear = () => {
-    return new Date().getFullYear() == 2022 ? '2022' : '2022 - ' + new Date().getFullYear();
+    return new Date().getFullYear() == 2018 ? '2018' : '2018 - ' + new Date().getFullYear();
 }
 
 export default function Footer() {
     return (
         <>
             <footer className="text-center text-white bg-black">
-                <div className="container p-6">
+                {/* <div className="container p-6">
                     <div className="">
                         <p className="flex justify-center items-center">
                             <span className="mr-4">Register for free</span>
@@ -18,7 +18,7 @@ export default function Footer() {
                             </button>
                         </p>
                     </div>
-                </div>
+                </div> */}
 
                 <div className='flex md:inline-flex flex-col md:flex-row'>
                     <div className="text-center md:text-left p-4">
@@ -29,7 +29,7 @@ export default function Footer() {
                         <Link to="https://deviitor.com/">
                             Deviitor D&D
                         </Link>
-                        &nbsp; 2022.
+                        &nbsp; 2023.
                     </div>
                 </div>
             </footer>
