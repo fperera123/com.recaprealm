@@ -31,13 +31,6 @@ const Card = styled(Box).attrs({className:"testimonial-card card"})`
 
 `
 Card.Image = styled(Paragraph)`
-min-width: 60px;
-max-width: 60px;
-min-height: 60px;
-max-height: 60px;
-border-radius: 500px;
-width: 100%;
-
 `
 Card.Title = styled(Heading)`
 color: inherit;

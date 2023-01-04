@@ -5,7 +5,7 @@ import Testimonial from './style'
 import { Col, Container, Row } from 'react-bootstrap'
 export default function TestimonialSection({ data: { reviewOneItem } }) {
   return (
-    <Testimonial backgroundColor="#f3f4f6">
+    <Testimonial className='bg-primaryShade'>
       <Container>
         <Row className="justify-content-center">
           {

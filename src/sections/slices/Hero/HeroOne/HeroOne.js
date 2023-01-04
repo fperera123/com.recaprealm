@@ -36,11 +36,11 @@ export default function HeroOne({ data: { titleParagraphImage } }) {
 
             return <div key={index} className={"carousel-item relative float-left w-full h-full " + (index == 0 ? 'active' : '')} >
               <Img className='w-full h-full brightness-50 0' image={getImage(image.localFile)} alt={imageAlt} layout="fullWidth" placeholder="blurred" />
-              <div className="carousel-caption hidden md:block absolute text-center">
-                <Content.Title as={titleHtmlTag} className="!text-secondaryShade">
+              <div className="carousel-caption hidden md:block absolute">
+                <Content.Title as={titleHtmlTag} className="!text-secondaryShade text-center">
                   {title}
                 </Content.Title>
-                <Content.Text as="p" className='text-lightShade'>
+                <Content.Text as="p" className='text-lightShade text-center'>
                   {paragraph}
                 </Content.Text>
               </div>

@@ -21,7 +21,7 @@ export default function ContentWithImageAndList({ data: { contentWithImageTitleP
         <div>
           <Content.List className='flex flex-col'>
             {unorderedList.map((item, index) => {
-              return <div className='inline-flex items-center'>
+              return <div className='inline-flex items-center mb-4'>
                 <i className='fal fa-badge-check text-2xl !text-primary'></i>
                 <li className='text-lg' key={index}>{item.text}</li>
               </div>
