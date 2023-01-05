@@ -5,8 +5,8 @@ import { Link } from '@/components'
 export default function ContactOne({ data }) {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 items-center bg-lightShade">
-            <div class="w-full h-[400px]">
-                <iframe src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=FLOOR%202%20OFFICE%20No%206%20HAWALLY%20BLOCK%203%20STREET%20101,%20TUNISIA%20STREET%20FIRDOUS%20BUILDING,%20Kuwait%20City,%20Kuwait+(Better%20Move%20Co)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" class="left-0 top-0 h-full w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg" frameborder="0" allowfullscreen></iframe>
+            <div className="w-full h-[400px]">
+                <iframe className="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3477.882597198733!2d48.013394616025884!3d29.34443628214237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fcf9c92c9b4e495%3A0x433fa07c4e07cb81!2sBetter%20Move%20Co!5e0!3m2!1sen!2sph!4v1672880973223!5m2!1sen!2sph" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div className="w-full flex flex-col justify-center items-center p-4">
                 <Content.Text as='p' className='text-center'>

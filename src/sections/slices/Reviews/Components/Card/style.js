@@ -30,7 +30,7 @@ const Card = styled(Box).attrs({className:"testimonial-card card"})`
     }
 
 `
-Card.Image = styled(Paragraph)`
+Card.Image = styled(Box)`
 `
 Card.Title = styled(Heading)`
 color: inherit;

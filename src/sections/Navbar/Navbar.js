@@ -12,23 +12,23 @@ export default function Navbar() {
 
                 <div className='flex md:hidden'>
                     <button className='p-2 outline-0' data-bs-toggle="collapse" data-bs-target="#navBarItems">
-                        <i class="fas fa-bars fa-2x !text-primary"></i>
+                        <i className="fas fa-bars fa-2x !text-primary"></i>
                     </button>
                 </div>
 
-                <div class="collapse navbar-collapse items-center md:visible md:!flex md:flex-grow-0 md:flex-1 " id="navBarItems">
-                    <ul class="navbar-nav flex flex-col md:flex-row pl-0 list-style-none mr-auto gap-y-2 md:gap-x-6">
-                        <li class="nav-item active">
+                <div className="collapse navbar-collapse items-center md:visible md:!flex md:flex-grow-0 md:flex-1 " id="navBarItems">
+                    <ul className="navbar-nav flex flex-col md:flex-row pl-0 list-style-none mr-auto gap-y-2 md:gap-x-6">
+                        <li className="nav-item active">
                             <Link className="" to="tel:+96599341116">
                                 Home
                             </Link>
                         </li>
-                        <li class="nav-item">
+                        <li className="nav-item">
                             <Link className="" to="tel:+96599341116">
                                 Gallery
                             </Link>
                         </li>
-                        <li class="nav-item">
+                        <li className="nav-item">
                             <Link className="" to="tel:+96599341116">
                                 Blog
                             </Link>

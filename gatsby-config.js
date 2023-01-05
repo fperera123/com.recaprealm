@@ -34,6 +34,9 @@ const strapiConfig = {
             reviewOneItem: {
               populate: '*',
             },
+            imageGrid:{
+              populate: '*',
+            },
           }
         },
       },

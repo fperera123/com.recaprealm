@@ -13,6 +13,7 @@ import Footer from "@/sections/Footer";
 import ContactOne from "@/sections/slices/Contact/ContactOne";
 import Navbar from "@/sections/Navbar";
 import TopBar from "@/sections/TopBar";
+import GalleryOne from "@/sections/slices/Gallery/GalleryOne";
 
 export const query = graphql`
   query GetSingleUniversal($slug: String){
@@ -96,6 +97,19 @@ export const query = graphql`
             imageAlt
            }
           }
+          ... on STRAPI__COMPONENT_SLICES_GALLERY_ONE {
+            __typename
+            imageGrid{
+            image {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+            }
+            imageAlt
+           }
+          }
       }
     }
   }
@@ -125,8 +139,8 @@ export const query = graphql`
 export default function Home({ data: { universal: { slices, slug } } }) {
   return (
     <PageWrapper>
-      <TopBar/>
-      <Navbar/>
+      <TopBar />
+      <Navbar />
       {slices.map(slice => {
         console.log(slice)
         switch (slice.__typename) {
@@ -145,14 +159,14 @@ export default function Home({ data: { universal: { slices, slug } } }) {
           case "STRAPI__COMPONENT_SLICES_REVIEW_ONE":
             return <Reviews key={slice.__typename} data={slice} />
 
-          {/* case "STRAPI__COMPONENT_SLICES_REVIEW_ONE":
-            return <ContactOne key={slice.__typename} data={slice} /> */}
+          case "STRAPI__COMPONENT_SLICES_GALLERY_ONE":
+            return <GalleryOne key={slice.__typename} data={slice} />
 
           default:
             return null;
         }
       })}
-      <ContactOne/>
+      <ContactOne />
       <Footer />
     </PageWrapper>
   )
