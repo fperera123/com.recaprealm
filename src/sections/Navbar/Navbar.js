@@ -1,8 +1,29 @@
 import React from 'react'
 import { Link } from '@/components'
 import './style.scss';
+import { useLocation } from '@reach/router';
+
+const languageSelector = (location) => {
+    if (location.pathname.includes('/en/') === true) {
+        return (
+            <Link
+                to={location.pathname.replace("/en/", "/")}
+            >
+                عربي
+            </Link>
+        )
+    }
+    else {
+       return <Link to={`/en${location.pathname}`}>
+            English
+        </Link>
+    }
+}
 
 export default function Navbar() {
+
+    const location = useLocation()
+    console.log(location);
     return (
         <>
             <nav className='flex flex-wrap w-full p-2 items-center md:!py-4 md:!px-6  md:inline-flex'>
@@ -29,9 +50,7 @@ export default function Navbar() {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="" to="tel:+96599341116">
-                                Blog
-                            </Link>
+                            {languageSelector(location)}
                         </li>
                     </ul>
                 </div>

@@ -40,7 +40,7 @@ export default function HeroOne({ data: { titleParagraphImage } }) {
                 <Content.Title as={titleHtmlTag} className="!text-secondaryShade text-center">
                   {title}
                 </Content.Title>
-                <Content.Text as="p" className='text-lightShade text-center'>
+                <Content.Text as="p" className='!text-lightShade text-center'>
                   {paragraph}
                 </Content.Text>
               </div>
