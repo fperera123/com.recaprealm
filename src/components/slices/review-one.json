@@ -2,14 +2,14 @@
   "collectionName": "components_slices_review_ones",
   "info": {
     "displayName": "Review One",
-    "icon": "archive"
+    "icon": "archway"
   },
   "options": {},
   "attributes": {
-    "ReviewOneItem": {
+    "reviewOneItem": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.review-one"
+      "component": "shared.review-one-item"
     }
   }
 }

@@ -10,9 +10,6 @@
     "title": {
       "type": "string"
     },
-    "paragraph": {
-      "type": "text"
-    },
     "titleHtmlTag": {
       "type": "enumeration",
       "enum": [
@@ -26,6 +23,9 @@
         "div",
         "span"
       ]
+    },
+    "paragraph": {
+      "type": "richtext"
     }
   }
 }

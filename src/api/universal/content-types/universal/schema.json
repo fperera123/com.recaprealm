@@ -10,7 +10,11 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "slices": {
       "type": "dynamiczone",
@@ -19,13 +23,24 @@
         "slices.hero-one",
         "slices.content-with-image",
         "slices.content-with-image-and-list",
-        "shared.review-one"
+        "slices.review-one",
+        "slices.gallery-one"
       ],
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "slug": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

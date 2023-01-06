@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_slices_gallery_ones",
+  "info": {
+    "displayName": "Gallery One",
+    "icon": "adjust",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "imageGrid": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.basic-image"
+    }
+  }
+}

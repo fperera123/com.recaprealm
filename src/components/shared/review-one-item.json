@@ -1,9 +1,8 @@
 {
-  "collectionName": "components_slices_review_ones",
+  "collectionName": "components_shared_review_one_items",
   "info": {
     "displayName": "Review One Item",
-    "icon": "angry",
-    "description": ""
+    "icon": "archive"
   },
   "options": {},
   "attributes": {

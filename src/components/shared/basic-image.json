@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_basic_images",
+  "info": {
+    "displayName": "Basic Image",
+    "icon": "atlas"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "imageAlt": {
+      "type": "string"
+    },
+    "imageTitle": {
+      "type": "string"
+    }
+  }
+}
