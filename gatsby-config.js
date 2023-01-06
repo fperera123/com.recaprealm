@@ -25,7 +25,10 @@ const strapiConfig = {
             titleParagraphImage: {
               populate: '*',
             },
-            titleParagraphImage: {
+            titleMarkdown: {
+              populate: '*',
+            },
+            titleMarkdownImage: {
               populate: '*',
             },
             unorderedList: {
@@ -39,6 +42,9 @@ const strapiConfig = {
             },
           }
         },
+        ogImage: {
+          populate: '*',
+        }
       },
     },
   }],
@@ -49,13 +55,14 @@ module.exports = {
   siteMetadata: {
     title: `Shade Gatsby`,
   },
-  // flags: {
-  //   PRESERVE_FILE_DOWNLOAD_CACHE: true,
-  //   PRESERVE_WEBPACK_CACHE: true,
-  //   THE_FLAG: false,
-  //   DEV_SSR: true,
-  //   FAST_REFRESH: true,
-  // },
+  flags: {
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PRESERVE_WEBPACK_CACHE: true,
+    THE_FLAG: false,
+    // DEV_SSR: true,
+    FAST_REFRESH: true,
+    // DETECT_NODE_MUTATIONS: true,
+  },
   plugins: [
     `gatsby-plugin-styled-components`,
     {

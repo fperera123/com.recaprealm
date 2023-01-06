@@ -126,3 +126,12 @@ body {
 .collapse.navbar-collapse.show{
   visibility: visible;
 }
+
+.app-markdown{
+  p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000;
+    text-align: justify;
+  }
+}

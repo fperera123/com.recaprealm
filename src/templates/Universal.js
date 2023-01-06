@@ -20,17 +20,38 @@ export const query = graphql`
     universal: strapiUniversal(slug: {eq: $slug}) {
       id
       slug
+
+      metaTitle,
+      metaDescription,
+      ogTitle,
+      ogDescription,
+      ogImage {
+        localFile {
+          childImageSharp {
+            fluid {
+              src
+            }
+          }
+        }
+      }
+
       slices {
         ... on STRAPI__COMPONENT_SLICES_PARAGRAPH_WITH_TITLE  {
             __typename
-            titleParagraph{
+            id
+            titleMarkdown{
                 title
-                paragraph
+                markdown{
+                  data{
+                    markdown
+                  }
+                }
                 titleHtmlTag
             }
           }
         ... on STRAPI__COMPONENT_SLICES_HERO_ONE {
             __typename
+            id
             titleParagraphImage{
                 title
                 paragraph
@@ -47,9 +68,14 @@ export const query = graphql`
           }
           ... on STRAPI__COMPONENT_SLICES_CONTENT_WITH_IMAGE {
             __typename
-            contentWithImageTitleParagraphImage: titleParagraphImage{
+            id
+            contentWithImageTitleMarkdownImage: titleMarkdownImage{
                 title
-                paragraph
+                markdown{
+                  data{
+                    markdown
+                  }
+                }
                 titleHtmlTag
                 image {
                     localFile {
@@ -63,9 +89,14 @@ export const query = graphql`
           }
           ... on STRAPI__COMPONENT_SLICES_CONTENT_WITH_IMAGE_AND_LIST{
             __typename
-            contentWithImageTitleParagraphImage: titleParagraphImage{
+            id
+            contentWithImageTitleMarkdownImage: titleMarkdownImage{
                 title
-                paragraph
+                markdown{
+                  data{
+                    markdown
+                  }
+                }
                 titleHtmlTag
                 image {
                     localFile {
@@ -80,9 +111,11 @@ export const query = graphql`
               text
               icon
             }
+            sliceWidth,
           }
           ... on STRAPI__COMPONENT_SLICES_REVIEW_ONE {
             __typename
+            id
            reviewOneItem{
             text
             customerName
@@ -99,6 +132,7 @@ export const query = graphql`
           }
           ... on STRAPI__COMPONENT_SLICES_GALLERY_ONE {
             __typename
+            id
             imageGrid{
             image {
               localFile {
@@ -136,31 +170,71 @@ export const query = graphql`
 // }
 
 
+export function Head({location, data : { universal }}) {
+  const siteRoot = process.env.SITE_URL;
+  console.log(location);
+  const {
+    metaTitle,
+    metaDescription,
+    ogTitle,
+    ogDescription,
+    ogImage,
+  } = universal;
+
+  const {
+    localFile: {
+      childImageSharp :{
+        fluid :{
+          src
+        }
+      }
+    }
+  } = ogImage;
+
+  // console.log(src);
+  return (
+    <>
+      <title>{metaTitle}</title>
+      <meta name="description" content={metaDescription} />
+
+      <meta property="og:title" content={ogTitle} />
+      <meta property="og:description" content={ogDescription} />
+      <meta property="og:url" content={`${siteRoot}${location.pathname}`} />
+      <meta property="og:image" content={`${siteRoot}${src}`} />
+
+      <meta property="og:type" content="website" />
+      <meta name="twitter:card" content="summary_large_image" />
+
+      <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    </>
+  )
+}
+
 export default function Home({ data: { universal: { slices, slug } } }) {
   return (
     <PageWrapper>
       <TopBar />
       <Navbar />
       {slices.map(slice => {
-        console.log(slice)
         switch (slice.__typename) {
           case "STRAPI__COMPONENT_SLICES_PARAGRAPH_WITH_TITLE":
-            return <ContentPlain key={slice.__typename} data={slice} />
+            return <ContentPlain key={slice.id} data={slice} />
 
           case "STRAPI__COMPONENT_SLICES_HERO_ONE":
-            return <HeroOne key={slice.__typename} data={slice} />
+            return <HeroOne key={slice.id} data={slice} />
 
           case "STRAPI__COMPONENT_SLICES_CONTENT_WITH_IMAGE":
-            return <ContentWithImage key={slice.__typename} data={slice} />
+            return <ContentWithImage key={slice.id} data={slice} />
 
           case "STRAPI__COMPONENT_SLICES_CONTENT_WITH_IMAGE_AND_LIST":
-            return <ContentWithImageAndList key={slice.__typename} data={slice} />
+            return null;
+            {/* return <ContentWithImageAndList key={slice.id} data={slice} /> */}
 
           case "STRAPI__COMPONENT_SLICES_REVIEW_ONE":
-            return <Reviews key={slice.__typename} data={slice} />
+            return <Reviews key={slice.id} data={slice} />
 
           case "STRAPI__COMPONENT_SLICES_GALLERY_ONE":
-            return <GalleryOne key={slice.__typename} data={slice} />
+            return <GalleryOne key={slice.id} data={slice} />
 
           default:
             return null;
@@ -168,6 +242,7 @@ export default function Home({ data: { universal: { slices, slug } } }) {
       })}
       <ContactOne />
       <Footer />
+      <div className="sm:w-1/3 hidden"></div>
     </PageWrapper>
   )
 }

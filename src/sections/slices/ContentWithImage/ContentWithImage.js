@@ -1,12 +1,11 @@
 import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
 import { GatsbyImage as Img, getImage } from 'gatsby-plugin-image'
-
+import ReactMarkdown from 'react-markdown'
+import rehypeRaw from 'rehype-raw'
 import Content from "../contentStyles"
 
-export default function ContentWithImage({ data: { contentWithImageTitleParagraphImage } }) {
-  const { title, paragraph, titleHtmlTag, image, imageAlt } = contentWithImageTitleParagraphImage
-
+export default function ContentWithImage({ data: { contentWithImageTitleMarkdownImage } }) {
+  const { title, markdown, titleHtmlTag, image, imageAlt } = contentWithImageTitleMarkdownImage
   return (
     <>
       <div className='container flex p-4 w-full flex-row flex-wrap items-center md:!flex-nowrap'>
@@ -17,9 +16,7 @@ export default function ContentWithImage({ data: { contentWithImageTitleParagrap
           <Content.Title as={titleHtmlTag}>
             {title}
           </Content.Title>
-          <Content.Text as='p'>
-            {paragraph}
-          </Content.Text>
+          <ReactMarkdown className={'app-markdown'} rehypePlugins={[rehypeRaw]}  children={markdown.data.markdown} />
         </div>
       </div>
     </>
