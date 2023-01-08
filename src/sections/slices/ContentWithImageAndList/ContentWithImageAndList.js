@@ -6,15 +6,14 @@ import Content from "../contentStyles"
 
 export default function ContentWithImageAndList({ data: { contentWithImageTitleMarkdownImage, unorderedList, sliceWidth } }) {
   const { title, markdown, titleHtmlTag, image, imageAlt } = contentWithImageTitleMarkdownImage
-  console.log(sliceWidth);
   return (
     <>
-      <div className={'flex w-full p-4 flex-col flex-wrap items-center min-w-[300px] sm:inline-flex ' + 'sm:' + sliceWidth}>
+      <div className={'flex w-full px-4 py-16 flex-col flex-wrap items-center min-w-[300px] sm:inline-flex ' + 'sm:' + sliceWidth}>
         <div className="mb-2">
           <Content.Title as={titleHtmlTag} className='text-center'>
             {title}
           </Content.Title>
-          <ReactMarkdown className={'app-markdown'} rehypePlugins={[rehypeRaw]}  children={markdown.data.markdown} />
+          <ReactMarkdown className={'app-markdown max-w-[600px]'} rehypePlugins={[rehypeRaw]}  children={markdown.data.markdown} />
         </div>
         <div className='w-full max-w-[640px] max-h-[640px] overflow-hidden rounded-md border-secondaryShade border-solid border-6 mb-2'>
           <Img className='w-full h-full' image={getImage(image.localFile)} alt={imageAlt} layout="fullWidth" />

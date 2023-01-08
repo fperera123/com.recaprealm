@@ -37,7 +37,7 @@ export default function Navbar() {
                     </button>
                 </div>
 
-                <div className="collapse navbar-collapse items-center md:visible md:!flex md:flex-grow-0 md:flex-1 " id="navBarItems">
+                <div className="collapse flex w-full items-center md:visible md:!flex md:flex-grow-0 md:flex-1 " id="navBarItems">
                     <ul className="navbar-nav flex flex-col md:flex-row pl-0 list-style-none mr-auto gap-y-2 md:gap-x-6">
                         <li className="nav-item active">
                             <Link className="" to="tel:+96599341116">

@@ -8,8 +8,8 @@ export default function SelectBoxFilter({data,prompt,value,onChange,id,label}){
     const ref = useRef(null);
 
     useEffect(()=>{
-        document.addEventListener("click",closeSelectDropdown);
-            return ()=> document.removeEventListener("click",closeSelectDropdown)
+        // document.addEventListener("click",closeSelectDropdown);
+        //     return ()=> document.removeEventListener("click",closeSelectDropdown)
     },[])
 function closeSelectDropdown(e) {
 
@@ -31,7 +31,7 @@ function filter(options) {
                     return(
                         <li className={`o-select-dropdown--item ${value === item ? "open":null}`}
                             onClick={()=> {
-                                onChange(item); 
+                                onChange(item);
                                 setOpen(false);}}
                             key={item[id]}
                         >{item[label]}</li>

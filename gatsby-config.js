@@ -17,6 +17,9 @@ const strapiConfig = {
     },
     queryParams: {
       populate: {
+        ogImage: {
+          populate: '*',
+        },
         'slices': {
           populate: {
             titleParagraph: {
@@ -40,6 +43,9 @@ const strapiConfig = {
             imageGrid:{
               populate: '*',
             },
+            basicImage:{
+              populate: '*',
+            },
           }
         },
         ogImage: {
@@ -53,14 +59,15 @@ const strapiConfig = {
 
 module.exports = {
   siteMetadata: {
-    title: `Shade Gatsby`,
+    title: ``,
+    siteUrl: 'http://localhost:8080',
   },
   flags: {
-    PRESERVE_FILE_DOWNLOAD_CACHE: true,
-    PRESERVE_WEBPACK_CACHE: true,
-    THE_FLAG: false,
+    // PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    // PRESERVE_WEBPACK_CACHE: true,
+    // THE_FLAG: false,
     // DEV_SSR: true,
-    FAST_REFRESH: true,
+    // FAST_REFRESH: true,
     // DETECT_NODE_MUTATIONS: true,
   },
   plugins: [
@@ -88,5 +95,24 @@ module.exports = {
       resolve: `gatsby-source-strapi`,
       options: strapiConfig,
     },
+        {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        configFile: 'robots-txt.config.js'
+      }
+    },
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Better Move Co`,
+        short_name: `BM`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#ffffff`,
+        display: `standalone`,
+        icon: `src/assets/image/favicon-512.png`,
+      },
+    }
   ],
 }

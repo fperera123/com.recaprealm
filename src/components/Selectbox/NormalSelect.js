@@ -7,12 +7,12 @@ export default function SelectBox({data,prompt,value,onChange,id,label,...rest})
     const ref = useRef("");
 
     useEffect(()=>{
-        ["click","touchend"].forEach(e => {
-            document.addEventListener(e,toggleSelectDropdown);
-        })
-            return ()=> ["click","touchend"].forEach(e => {
-                document.removeEventListener("click",toggleSelectDropdown)
-            })
+        // ["click","touchend"].forEach(e => {
+        //     document.addEventListener(e,toggleSelectDropdown);
+        // })
+            // return ()=> ["click","touchend"].forEach(e => {
+            //     document.removeEventListener("click",toggleSelectDropdown)
+            // })
     },[])
 function toggleSelectDropdown(e) {
 
@@ -31,7 +31,7 @@ function toggleSelectDropdown(e) {
                     return(
                         <li className={`o-select-dropdown--item${value === item ? " selected":""}`}
                             onClick={()=> {
-                                onChange(item); 
+                                onChange(item);
                                 setOpen(false);}}
                             key={item[id]}
                             aria-hidden="true"

@@ -8,7 +8,7 @@ export default function ContentPlain({ data: { titleMarkdown } }) {
 
   return (
     <>
-      <div className='flex p-4 w-full flex-col flex-wrap container'>
+      <div className='flex py-16 w-full flex-col flex-wrap container'>
         <Content.Title as={titleHtmlTag} className="text-center">
           {title}
         </Content.Title>

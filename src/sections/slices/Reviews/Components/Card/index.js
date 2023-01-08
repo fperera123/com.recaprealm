@@ -5,9 +5,9 @@ import { GatsbyImage as Img, getImage } from 'gatsby-plugin-image'
 export default function TestimonialCard({ customerName, customerPosition, text, image, imageAlt, ...rest }) {
   return (
     <Card className='bg-lightShade'>
-      <Card.Image className="w-[4rem] h-[4rem] rounded-full overflow-hidden">
+      {/* <Card.Image className="w-[4rem] h-[4rem] rounded-full overflow-hidden">
         <Img image={getImage(image.localFile)} alt={imageAlt} layout="fullWidth" />
-      </Card.Image>
+      </Card.Image> */}
       <Card.Body>
         <Card.Text as="p">{text}</Card.Text>
         <Card.UserBlock>

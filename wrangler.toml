@@ -1,0 +1,9 @@
+name = "demo"
+type = "webpack"
+route = ''
+zone_id = ''
+usage_model = ''
+compatibility_flags = []
+workers_dev = true
+site = {bucket = "./public",entry-point = "workers-site"}
+compatibility_date = "2023-01-08"
