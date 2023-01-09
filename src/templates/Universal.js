@@ -14,7 +14,7 @@ import Navbar from "@/sections/Navbar";
 import TopBar from "@/sections/TopBar";
 import GalleryOne from "@/sections/slices/Gallery/GalleryOne";
 import { GatsbyImage as Img, getSrc, getImage } from 'gatsby-plugin-image'
-
+import { Helmet } from "react-helmet";
 
 export const query = graphql`
   query GetSingleUniversal($slug: String){
@@ -33,6 +33,14 @@ export const query = graphql`
           }
         }
       }
+      jsonLD{
+        internal{
+          content
+        }
+      }
+
+      lang
+      direction
 
       slices {
         ... on STRAPI__COMPONENT_SLICES_PARAGRAPH_WITH_TITLE  {
@@ -168,16 +176,22 @@ export const query = graphql`
 
 export function Head({ location, data: { universal } }) {
   const siteRoot = process.env.SITE_URL;
-  console.log(location);
+
   const {
     metaTitle,
     metaDescription,
     ogTitle,
     ogDescription,
     ogImage,
+    jsonLD,
+
+    lang,
+    direction,
   } = universal;
 
   const src = getSrc(ogImage.localFile);
+
+  const { internal: { content } } = jsonLD;
 
   return (
     <>
@@ -192,17 +206,34 @@ export function Head({ location, data: { universal } }) {
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary_large_image" />
 
+      <meta name="robots" content="index, archive, follow"/>
+
+      <link rel="canonical" href={`${siteRoot}${location.pathname}`}/>
+
       <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+
+      <script type="application/ld+json">
+        {
+          content
+        }
+      </script>
+
+      <Helmet
+        htmlAttributes={{
+          lang: lang,
+          dir: direction,
+        }}
+      />
 
     </>
   )
 }
 
-export default function Home({ data: { universal: { slices, slug } } }) {
+export default function Home({ data: { universal: { slices, direction } } }) {
   return (
     <PageWrapper>
       <TopBar />
-      <Navbar />
+      <Navbar data={direction} />
       {slices.map(slice => {
         switch (slice.__typename) {
           case "STRAPI__COMPONENT_SLICES_PARAGRAPH_WITH_TITLE":

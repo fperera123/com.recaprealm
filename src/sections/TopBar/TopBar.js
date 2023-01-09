@@ -5,15 +5,15 @@ import { Link } from '@/components'
 export default function Footer() {
     return (
         <>
-            <div className='flex !bg-primary py-1 px-2 md:!px-6'>
+            <div dir="ltr" className='flex !bg-primary py-1 px-2 md:!px-6'>
                 <div className='flex text-lightShade gap-2 flex-wrap w-full justify-center items-center md:justify-start'>
                     <Link className="hover:text-black" to="https://wa.me/96599341116">
                         <i className='fab fa-whatsapp fa-2x'></i>
                     </Link>
-                    <Link className="hover:text-black" to="https://wa.me/96599341116">
+                    <Link className="hover:text-black" to="https://facebook.com/bettermovecokw">
                         <i className='fab fa-facebook fa-2x'></i>
                     </Link>
-                    <Link className="hover:text-black" to="https://wa.me/96599341116">
+                    <Link className="hover:text-black" to="https://www.instagram.com/better_move_co/">
                         <i className='fab fa-instagram fa-2x'></i>
                     </Link>
                 </div>

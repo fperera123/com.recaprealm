@@ -41,10 +41,10 @@ export default function ContactOne({ data }) {
                     <Link className="hover:text-black" to="https://wa.me/96599341116">
                         <i className='fab fa-whatsapp fa-2x'></i>
                     </Link>
-                    <Link className="hover:text-black" to="https://wa.me/96599341116">
+                    <Link className="hover:text-black" to="https://facebook.com/bettermovecokw">
                         <i className='fab fa-facebook fa-2x'></i>
                     </Link>
-                    <Link className="hover:text-black" to="https://wa.me/96599341116">
+                    <Link className="hover:text-black" to="https://www.instagram.com/better_move_co/">
                         <i className='fab fa-instagram fa-2x'></i>
                     </Link>
                 </div>

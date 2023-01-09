@@ -16,7 +16,7 @@ export default function ContentWithImageAndList({ data: { contentWithImageTitleM
           <ReactMarkdown className={'app-markdown max-w-[600px]'} rehypePlugins={[rehypeRaw]}  children={markdown.data.markdown} />
         </div>
         <div className='w-full max-w-[640px] max-h-[640px] overflow-hidden rounded-md border-secondaryShade border-solid border-6 mb-2'>
-          <Img className='w-full h-full' image={getImage(image.localFile)} alt={imageAlt} layout="fullWidth" />
+          <Img className='w-full h-full' image={getImage(image.localFile)} alt={imageAlt} layout="fullWidth" placeholder="blurred" />
         </div>
         <div>
           <Content.List className='flex flex-col'>

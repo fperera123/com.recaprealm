@@ -8,10 +8,9 @@ const renderImage = ({ imageAlt,
   imageOrder,
   imageTitle,
   image }, order) => {
-    console.log(image);
   if (imageOrder == order) {
     return <div className='max-w-[640px] w-full rounded-md border-secondaryShade border-solid border-6 m-auto md:!m-0'>
-      <Img image={getImage(image.localFile)} alt={imageAlt} title={imageTitle} layout="fullWidth" />
+      <Img image={getImage(image.localFile)} alt={imageAlt} title={imageTitle} layout="fullWidth" placeholder="blurred" />
     </div>
   }
   else {

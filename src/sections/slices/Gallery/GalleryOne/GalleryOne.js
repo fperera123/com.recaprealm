@@ -7,7 +7,7 @@ const getGridImages = (grid, gridNo) => {
     {
         return grid.map(({ image, imageAlt }, index) => {
             return <div key={`${grid}-${index}`} className={"p-1 " + (!isOdd && index == 2 || isOdd && index == 0 ? 'w-full' : 'w-1/2')} >
-                <Img className="block object-cover object-center w-full h-full rounded-lg" image={getImage(image.localFile)} alt={imageAlt} layout="fullWidth" />
+                <Img className="block object-cover object-center w-full h-full rounded-lg" image={getImage(image.localFile)} alt={imageAlt} layout="fullWidth" placeholder="blurred" />
             </div>;
         })
     }

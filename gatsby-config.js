@@ -50,7 +50,10 @@ const strapiConfig = {
         },
         ogImage: {
           populate: '*',
-        }
+        },
+        jsonLD:{
+          populate: '*',
+        },
       },
     },
   }],
@@ -60,7 +63,7 @@ const strapiConfig = {
 module.exports = {
   siteMetadata: {
     title: ``,
-    siteUrl: 'http://localhost:8080',
+    siteUrl: process.env.SITE_URL,
   },
   flags: {
     // PRESERVE_FILE_DOWNLOAD_CACHE: true,
@@ -112,6 +115,18 @@ module.exports = {
         theme_color: `#ffffff`,
         display: `standalone`,
         icon: `src/assets/image/favicon-512.png`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-PP1V6F3YLT",
+        ],
+
+        pluginConfig: {
+          head: false,
+        },
       },
     }
   ],
