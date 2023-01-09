@@ -40,6 +40,7 @@ exports.createPages = ({ actions, graphql }) => {
           edges {
             node {
               slug
+              lang
             }
           }
         }
@@ -63,6 +64,7 @@ exports.createPages = ({ actions, graphql }) => {
         component: path.resolve(`src/templates/Universal.js`),
         context: {
           slug: node.slug,
+          locale: node.lang,
         },
       })
     })

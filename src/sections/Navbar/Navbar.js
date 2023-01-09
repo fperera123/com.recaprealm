@@ -3,7 +3,8 @@ import { Link } from '@/components'
 import './style.scss';
 import { useLocation } from '@reach/router';
 import { StaticImage as Img } from 'gatsby-plugin-image'
-import logo from '@/assets/image/favicon-512.png'
+import { useStaticQuery, graphql } from 'gatsby';
+import GlobalHeaderContext from "@/context/GlobalHeaderContext";
 
 const languageSelector = (location) => {
     if (location.pathname.includes('/en/') === true) {
@@ -16,16 +17,17 @@ const languageSelector = (location) => {
         )
     }
     else {
-       return <Link to={`/en${location.pathname}`}>
+        return <Link to={`/en${location.pathname}`}>
             English
         </Link>
     }
 }
 
-export default function Navbar({data}) {
-    const location = useLocation()
+export default function Navbar({ direction, items }) {
 
-    const direction = data;
+    const { getLanguagePrefix } = React.useContext(GlobalHeaderContext);
+
+    const location = useLocation()
 
     return (
         <>
@@ -42,16 +44,13 @@ export default function Navbar({data}) {
 
                 <div dir={direction} className="collapse flex w-full items-center md:visible md:!flex md:flex-grow-0 md:flex-1 " id="navBarItems">
                     <ul className="navbar-nav flex flex-col w-full md:flex-row pl-0 list-style-none mr-auto gap-y-2 md:gap-x-6">
-                        <li className="nav-item active">
-                            <Link className="" to={'/'}>
-                                Home
-                            </Link>
-                        </li>
-                        {/* <li className="nav-item">
-                            <Link className="" to="tel:+96599341116">
-                                Gallery
-                            </Link>
-                        </li> */}
+                        {items.map(item => {
+                            return <li className="nav-item active">
+                                <Link className="whitespace-nowrap" to={`${getLanguagePrefix(location)}${item.to}`}>
+                                    {item.title}
+                                </Link>
+                            </li>
+                        })}
                         <li className="nav-item">
                             {languageSelector(location)}
                         </li>

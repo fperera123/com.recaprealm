@@ -57,7 +57,17 @@ const strapiConfig = {
       },
     },
   }],
-  singleTypes: [],
+  singleTypes: [{
+    singularName: 'main-menu',
+    pluginOptions: {
+      i18n: {
+        locale: 'all', // Fetch all localizations
+      },
+    },
+    queryParams: {
+      populate: '*',
+    },
+  }],
 };
 
 module.exports = {

@@ -18,19 +18,19 @@ export default function ContactOne({ data }) {
                     KUWAIT.
                 </Content.Text>
                 <div className='flex flex-col text-center w-full text-black mt-4 gap-y-4'>
-                    <Link className="hover:text-primaryShade" to="tel:+96599341116">
+                    <Link dir="ltr" className="hover:text-primaryShade" to="tel:+96599341116">
                         <div className='flex items-center justify-center w-full'>
                             <i className='fal fa-phone fa-2x mr-2'></i>
                             <Content.Text as='p' className='whitespace-nowrap hover:text-primaryShade'>(+965) 99 34 1116 </Content.Text>
                         </div>
                     </Link>
-                    <Link className="hover:text-primaryShade" to="tel:+96560059169">
+                    <Link dir="ltr" className="hover:text-primaryShade" to="tel:+96560059169">
                         <div className='flex items-center justify-center w-full'>
                             <i className='fal fa-phone fa-2x mr-2'></i>
                             <Content.Text as='p' className='whitespace-nowrap hover:text-primaryShade'>(+965) 60 05 9169 </Content.Text>
                         </div>
                     </Link>
-                    <Link className="hover:text-primaryShade" to="mailto:info@bettermoveco.com">
+                    <Link dir="ltr" className="hover:text-primaryShade" to="mailto:info@bettermoveco.com">
                         <div className='flex items-center justify-center w-full'>
                             <i className='fal fa-envelope fa-2x mr-2'></i>
                             <Content.Text as='p' className='whitespace-nowrap hover:text-primaryShade'>info@bettermoveco.com</Content.Text>

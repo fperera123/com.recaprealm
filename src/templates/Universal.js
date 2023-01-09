@@ -17,7 +17,15 @@ import { GatsbyImage as Img, getSrc, getImage } from 'gatsby-plugin-image'
 import { Helmet } from "react-helmet";
 
 export const query = graphql`
-  query GetSingleUniversal($slug: String){
+  query GetSingleUniversal($slug: String, $locale: String){
+    mainMenu: strapiMainMenu (locale: {eq: $locale}){
+      items {
+        icon
+        title
+        target
+        to
+      }
+    }
     universal: strapiUniversal(slug: {eq: $slug}) {
       id
       slug
@@ -153,27 +161,6 @@ export const query = graphql`
   }
 `
 
-// const getHeader = (slug) => {
-//     const headerClasses = slug == "#home" ? "site-header site-header--menu-end dark-header site-header--sticky" : "site-header site-header--menu-end dark-header not-transparent site-header--sticky";
-//     const header = {
-//         headerClasses: headerClasses,
-//         containerFluid: false,
-//         darkLogo: false,
-//         buttonBlock: (
-//             <HeaderButton
-//                 className="ms-auto d-none d-xs-inline-flex"
-//                 btnText="Contact"
-//                 mr="15px"
-//                 mrLG="0"
-//                 btnLink="/contact"
-//             />
-//         ),
-//     }
-
-//     return header;
-// }
-
-
 export function Head({ location, data: { universal } }) {
   const siteRoot = process.env.SITE_URL;
 
@@ -206,9 +193,9 @@ export function Head({ location, data: { universal } }) {
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary_large_image" />
 
-      <meta name="robots" content="index, archive, follow"/>
+      <meta name="robots" content="index, archive, follow" />
 
-      <link rel="canonical" href={`${siteRoot}${location.pathname}`}/>
+      <link rel="canonical" href={`${siteRoot}${location.pathname}`} />
 
       <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 
@@ -229,11 +216,22 @@ export function Head({ location, data: { universal } }) {
   )
 }
 
-export default function Home({ data: { universal: { slices, direction } } }) {
+export default function Home({
+  data: {
+    universal:
+    {
+      slices,
+      direction
+    },
+    mainMenu: {
+      items
+    }
+  }
+}) {
   return (
     <PageWrapper>
       <TopBar />
-      <Navbar data={direction} />
+      <Navbar direction={direction} items={items} />
       {slices.map(slice => {
         switch (slice.__typename) {
           case "STRAPI__COMPONENT_SLICES_PARAGRAPH_WITH_TITLE":
