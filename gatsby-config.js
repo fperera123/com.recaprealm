@@ -40,10 +40,10 @@ const strapiConfig = {
             reviewOneItem: {
               populate: '*',
             },
-            imageGrid:{
+            imageGrid: {
               populate: '*',
             },
-            basicImage:{
+            basicImage: {
               populate: '*',
             },
           }
@@ -51,7 +51,7 @@ const strapiConfig = {
         ogImage: {
           populate: '*',
         },
-        jsonLD:{
+        jsonLD: {
           populate: '*',
         },
       },
@@ -69,6 +69,8 @@ const strapiConfig = {
     },
   }],
 };
+
+const siteUrl = process.env.SITE_URL || 'https://bettermoveco.com'
 
 module.exports = {
   siteMetadata: {
@@ -108,13 +110,53 @@ module.exports = {
       resolve: `gatsby-source-strapi`,
       options: strapiConfig,
     },
-        {
+    {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         configFile: 'robots-txt.config.js'
       }
     },
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        query: `
+        {
+          allSitePage {
+            nodes {
+              path
+              pageContext
+            }
+          }
+        }
+        `,
+        //   query: `
+        //   {
+        //     allStrapiUniversal {
+        //       nodes {
+        //         lang
+        //         slug
+        //         updatedAt
+        //       }
+        //     }
+        //   }
+        // `,
+        resolveSiteUrl: () => siteUrl,
+        serialize: ({ path, pageContext: { updatedAt } }) => {
+          return {
+            url: path,
+            lastmod: updatedAt,
+          }
+        },
+      },
+
+      // serialize: ({ path }) => {
+      //   return {
+      //     url: path,
+      //     lastmod: '2022-01-02 11:50:50',
+      //   }
+      // },
+    },
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -127,17 +169,21 @@ module.exports = {
         icon: `src/assets/image/favicon-512.png`,
       },
     },
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: [
-          "G-PP1V6F3YLT",
-        ],
+    // {
+    //   resolve: `gatsby-plugin-google-gtag`,
+    //   options: {
+    //     trackingIds: [
+    //       "G-PP1V6F3YLT",
+    //     ],
 
-        pluginConfig: {
-          head: false,
-        },
-      },
-    }
+    //     gtagConfig: {
+    //       send_page_view: true,
+    //     },
+
+    //     pluginConfig: {
+    //       head: false,
+    //     },
+    //   },
+    // }
   ],
 }

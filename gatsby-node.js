@@ -41,6 +41,7 @@ exports.createPages = ({ actions, graphql }) => {
             node {
               slug
               lang
+              updatedAt
             }
           }
         }
@@ -65,6 +66,7 @@ exports.createPages = ({ actions, graphql }) => {
         context: {
           slug: node.slug,
           locale: node.lang,
+          updatedAt: node.updatedAt,
         },
       })
     })

@@ -66,9 +66,9 @@
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "gatsby clean && npm serve",
+    "clean-serve": "gatsby clean && npm serve",
+    "clean-build": "gatsby clean && npm build",
     "serve": "gatsby develop -H 0.0.0.0 -p 8080 & npm run tailwind:watch",
     "clean": "gatsby clean",
     "tailwind:watch": "npx tailwindcss -i ./src/styles/tailwind-input.css -o ./src/styles/tailwind-output.css --watch",
