@@ -16,18 +16,18 @@ const GlobalHeaderProvider = ({ children }) => {
   };
 
   const getLanguagePrefix = (location) => {
-    if (location.pathname.includes('/en/')) {
-      setLanguage('en');
+    if (location.pathname.includes('/ar/')) {
+      setLanguage('ar-KW');
     }
     else {
-      setLanguage('ar-KW');
+      setLanguage('en');
     }
 
     if (language == 'ar-KW') {
-      return '';
+      return '/ar';
     }
     else if (language == 'en') {
-      return '/en';
+      return '/';
     }
     else {
       return '';

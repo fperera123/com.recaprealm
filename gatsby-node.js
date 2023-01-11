@@ -52,10 +52,10 @@ exports.createPages = ({ actions, graphql }) => {
     result.data.allStrapiUniversal.edges.forEach(({ node }) => {
       let pagePath = ''
       if (node.slug == '#home-ar') {
-        pagePath = '/'
+        pagePath = '/ar/'
       }
       else if (node.slug == '#home-en') {
-        pagePath = '/en/'
+        pagePath = '/'
       }
       else {
         pagePath = node.slug;

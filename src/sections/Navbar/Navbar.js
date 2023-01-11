@@ -7,18 +7,18 @@ import { useStaticQuery, graphql } from 'gatsby';
 import GlobalHeaderContext from "@/context/GlobalHeaderContext";
 
 const languageSelector = (location) => {
-    if (location.pathname.includes('/en/') === true) {
+    if (location.pathname.includes('/ar/') === true) {
         return (
             <Link
-                to={location.pathname.replace("/en/", "/")}
+                to={location.pathname.replace("/ar/", "/")}
             >
-                عربي
+                English
             </Link>
         )
     }
     else {
-        return <Link to={`/en${location.pathname}`}>
-            English
+        return <Link to={`/ar${location.pathname}`}>
+            عربي
         </Link>
     }
 }

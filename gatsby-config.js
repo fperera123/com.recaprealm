@@ -129,17 +129,6 @@ module.exports = {
           }
         }
         `,
-        //   query: `
-        //   {
-        //     allStrapiUniversal {
-        //       nodes {
-        //         lang
-        //         slug
-        //         updatedAt
-        //       }
-        //     }
-        //   }
-        // `,
         resolveSiteUrl: () => siteUrl,
         serialize: ({ path, pageContext: { updatedAt } }) => {
           return {
@@ -148,13 +137,6 @@ module.exports = {
           }
         },
       },
-
-      // serialize: ({ path }) => {
-      //   return {
-      //     url: path,
-      //     lastmod: '2022-01-02 11:50:50',
-      //   }
-      // },
     },
 
     {
@@ -169,21 +151,22 @@ module.exports = {
         icon: `src/assets/image/favicon-512.png`,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-google-gtag`,
-    //   options: {
-    //     trackingIds: [
-    //       "G-PP1V6F3YLT",
-    //     ],
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-PP1V6F3YLT",
+        ],
 
-    //     gtagConfig: {
-    //       send_page_view: true,
-    //     },
+        gtagConfig: {
+          send_page_view: true,
+          debug_mode: true,
+        },
 
-    //     pluginConfig: {
-    //       head: false,
-    //     },
-    //   },
-    // }
+        pluginConfig: {
+          head: true,
+        },
+      },
+    }
   ],
 }
