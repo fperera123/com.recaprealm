@@ -5,11 +5,13 @@ import { css } from "styled-components";
 const Content = styled(Box)``;
 
 Content.Title = styled(Heading)`
+
   ${(props) =>
     props.as === "h1" &&
     css`
       font-size: 3rem;
       font-weight: 700;
+      margin-bottom: 0.75rem;
     `}
 
   ${(props) =>
@@ -17,6 +19,7 @@ Content.Title = styled(Heading)`
     css`
       font-size: 2.5rem;
       font-weight: 600;
+      margin-bottom: 0.75rem;
     `}
 
     ${(props) =>
@@ -24,6 +27,7 @@ Content.Title = styled(Heading)`
     css`
       font-size: 2.125rem;
       font-weight: 600;
+      margin-bottom: 0.75rem;
     `}
 
     ${(props) =>
@@ -31,6 +35,7 @@ Content.Title = styled(Heading)`
     css`
       font-size: 1.5rem;
       font-weight: 600;
+      margin-bottom: 0.75rem;
     `}
 
     ${(props) =>
@@ -38,6 +43,7 @@ Content.Title = styled(Heading)`
     css`
       font-size: 1.3125rem;
       font-weight: 600;
+      margin-bottom: 0.75rem;
     `}
 
     ${(props) =>
@@ -45,6 +51,7 @@ Content.Title = styled(Heading)`
     css`
       font-size: 1rem;
       font-weight: 600;
+      margin-bottom: 0.75rem;
     `}
     color:#000;
 `;

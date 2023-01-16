@@ -156,6 +156,7 @@ module.exports = {
       options: {
         trackingIds: [
           "G-PP1V6F3YLT",
+          "G-3C6D1ZTF4F",
         ],
 
         gtagConfig: {

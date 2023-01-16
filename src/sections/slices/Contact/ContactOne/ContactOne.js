@@ -1,8 +1,11 @@
 import React from 'react'
 import Content from "../../contentStyles"
 import { Link } from '@/components'
+import { useLocation } from '@reach/router';
 
 export default function ContactOne({ data }) {
+    const location = useLocation();
+
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 items-center bg-lightShade">
             <div className="w-full h-[400px]">
@@ -18,13 +21,13 @@ export default function ContactOne({ data }) {
                     KUWAIT.
                 </Content.Text>
                 <div className='flex flex-col text-center w-full text-black mt-4 gap-y-4'>
-                    <Link dir="ltr" className="hover:text-primaryShade" to="tel:+96599341116">
+                    <Link dir="ltr" className="hover:text-primaryShade" to={`/ga/call_to_action?action=tel:+96599341116&redirect=${location.href}`}>
                         <div className='flex items-center justify-center w-full'>
                             <i className='fal fa-phone fa-2x mr-2'></i>
                             <Content.Text as='p' className='whitespace-nowrap hover:text-primaryShade'>(+965) 99 34 1116 </Content.Text>
                         </div>
                     </Link>
-                    <Link dir="ltr" className="hover:text-primaryShade" to="tel:+96560059169">
+                    <Link dir="ltr" className="hover:text-primaryShade" to={`/ga/call_to_action?action=tel:+96560059169&redirect=${location.href}`}>
                         <div className='flex items-center justify-center w-full'>
                             <i className='fal fa-phone fa-2x mr-2'></i>
                             <Content.Text as='p' className='whitespace-nowrap hover:text-primaryShade'>(+965) 60 05 9169 </Content.Text>

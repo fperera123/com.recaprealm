@@ -32,8 +32,16 @@ export default function Navbar({ direction, items }) {
     return (
         <>
             <nav dir="ltr" className='flex flex-wrap w-full p-2 items-center md:!py-4 md:!px-6  md:inline-flex'>
-                <div className='flex-grow'>
+                <div className='flex-grow md:flex-grow-0 md:flex'>
                     <Img className='w-[60px]' src="../../assets/image/favicon-512.png" alt="better move co logo" title="Better Move Co" />
+                </div>
+
+                <div className='hidden !text-primary text-2xl text-bold justify-center gap-x-4 md:flex md:flex-grow '>
+                    {getLanguagePrefix(location) == '/' ?
+                    <div>Better Move Co. For Furniture Moving in Kuwait</div> :
+
+                    <div>شركة بيتر موف لنقل العفش والاغراض بالكويت</div>}
+
                 </div>
 
                 <div className='flex md:hidden'>

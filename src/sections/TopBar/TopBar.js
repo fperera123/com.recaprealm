@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link } from '@/components'
+import { useLocation } from '@reach/router';
 
 
-export default function Footer() {
+export default function TopBar() {
+    const location = useLocation();
     return (
         <>
             <div dir="ltr" className='flex !bg-primary py-1 px-2 md:!px-6'>
@@ -19,7 +21,7 @@ export default function Footer() {
                 </div>
 
                 <div className='flex text-lightShade gap-2 flex-wrap w-full justify-center items-center md:justify-end'>
-                    <Link className="hover:text-black" to="tel:+96599341116">
+                    <Link className="hover:text-black" to={`/ga/call_to_action?action=tel:+96599341116&redirect=${location.href}`}>
                         <div className='flex items-center'>
                             <i className='fal fa-phone fa-2x mr-2'></i>
                             <span className='whitespace-nowrap'>(+965) 99 34 1116 </span>
