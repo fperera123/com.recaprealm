@@ -15,13 +15,14 @@ a {
   display: inline-block;
   text-decoration: none;
 }
+
 body {
-  > div {
-  overflow: hidden;
-}
+  >div {
+    overflow: hidden;
+  }
 }
 
-.btn{
+.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -73,10 +74,12 @@ body {
 .sonar-emitter-2::after {
   animation: sonarWave 2s linear infinite;
 }
+
 @-webkit-keyframes sonarWave {
   from {
     opacity: 0.4;
   }
+
   to {
     transform: scale(2.5);
     opacity: 0;
@@ -87,6 +90,7 @@ body {
   from {
     opacity: 0.4;
   }
+
   to {
     transform: scale(2.5);
     opacity: 0;
@@ -94,44 +98,55 @@ body {
 }
 
 
-.btn-rest{
+.btn-rest {
   box-shadow: none;
-  border:0px;
-  background:transparent;
-  &:focus{
+  border: 0px;
+  background: transparent;
+
+  &:focus {
     outline: none;
   }
 }
 
 
 
-.card{
-  &-title{
+.card {
+  &-title {
     font-size: 18px;
-    color:red;
+    color: red;
   }
-  &-text{
-    color:green;
+
+  &-text {
+    color: green;
     font-size: 14px;
   }
-  &.card-active{
-    background:pink
+
+  &.card-active {
+    background: pink
   }
-  &.text-center{
+
+  &.text-center {
     text-align: center;
   }
 }
 
 
-.collapse.navbar-collapse.show{
+.collapse.navbar-collapse.show {
   visibility: visible;
 }
 
-.app-markdown{
+.app-markdown {
   p {
     font-size: 1rem;
     font-weight: 400;
     color: #000;
     text-align: justify;
+  }
+
+  &.text-center {
+    p {
+      text-align: center;
+    }
+
   }
 }
