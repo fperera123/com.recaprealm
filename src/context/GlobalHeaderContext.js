@@ -27,7 +27,7 @@ const GlobalHeaderProvider = ({ children }) => {
       return '/ar';
     }
     else if (language == 'en') {
-      return '/';
+      return '';
     }
     else {
       return '';

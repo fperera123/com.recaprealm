@@ -37,11 +37,10 @@ export default function Navbar({ direction, items }) {
                 </div>
 
                 <div className='hidden !text-primary text-2xl text-bold justify-center gap-x-4 md:flex md:flex-grow '>
-                    {getLanguagePrefix(location) == '/' ?
-                    <div>Better Move Co. For Furniture Moving in Kuwait</div> :
-
-                    <div>شركة بيتر موف لنقل العفش والاغراض بالكويت</div>}
-
+                    {getLanguagePrefix(location) == '/ar' ?
+                        <div>شركة بيتر موف لنقل العفش والاغراض بالكويت</div> :
+                        <div>Better Move Co. For Furniture Moving in Kuwait</div>
+                    }
                 </div>
 
                 <div className='flex md:hidden'>
