@@ -1,14 +1,17 @@
 {
-  "collectionName": "components_shared_title_and_texts",
+  "collectionName": "components_shared_title_and_markdowns",
   "info": {
-    "displayName": "Title and Paragraph",
-    "icon": "ad",
+    "displayName": "Title and Markdown",
+    "icon": "align-center",
     "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string"
+    },
+    "markdown": {
+      "type": "richtext"
     },
     "titleHtmlTag": {
       "type": "enumeration",
@@ -23,9 +26,6 @@
         "div",
         "span"
       ]
-    },
-    "paragraph": {
-      "type": "string"
     }
   }
 }

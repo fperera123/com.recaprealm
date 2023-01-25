@@ -22,8 +22,17 @@ module.exports = createCoreController('api::universal.universal', ({ strapi }) =
                         },
                         titleParagraphImage: {
                             populate: '*',
+                        },
+                        contentWithImageAndList: {
+                            populate: '*',
+                            titleMarkdownImage: {
+                                populate: '*',
+                            }
                         }
                     }
+                },
+                ogImage: {
+                    populate: '*',
                 }
             },
         });

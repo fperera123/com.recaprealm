@@ -10,9 +10,6 @@
     "title": {
       "type": "string"
     },
-    "paragraph": {
-      "type": "text"
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -39,6 +36,9 @@
       ]
     },
     "imageAlt": {
+      "type": "string"
+    },
+    "paragraph": {
       "type": "string"
     }
   }

@@ -2,25 +2,35 @@
   "collectionName": "components_shared_basic_images",
   "info": {
     "displayName": "Basic Image",
-    "icon": "atlas"
+    "icon": "atlas",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "image": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "imageAlt": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "imageTitle": {
-      "type": "string"
+      "type": "string",
+      "required": true
+    },
+    "imageOrder": {
+      "type": "enumeration",
+      "enum": [
+        "first",
+        "last"
+      ],
+      "required": true,
+      "default": "first"
     }
   }
 }

@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_shared_link_items",
+  "info": {
+    "displayName": "link-item",
+    "icon": "link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "to": {
+      "type": "string",
+      "required": true,
+      "default": "#"
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "N/A",
+        "noon",
+        "fa-car"
+      ],
+      "required": true,
+      "default": "N/A"
+    },
+    "target": {
+      "type": "enumeration",
+      "enum": [
+        "N/A",
+        "_blank"
+      ],
+      "required": true,
+      "default": "N/A"
+    }
+  }
+}

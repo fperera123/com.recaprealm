@@ -2,14 +2,20 @@
   "collectionName": "components_slices_content_with_images",
   "info": {
     "displayName": "Content With Image",
-    "icon": "ad"
+    "icon": "ad",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "titleParagraphImage": {
+    "titleMarkdown": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.title-paragraph-image"
+      "component": "shared.title-and-markdown"
+    },
+    "basicImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.basic-image"
     }
   }
 }

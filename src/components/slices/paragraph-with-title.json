@@ -7,10 +7,10 @@
   },
   "options": {},
   "attributes": {
-    "titleParagraph": {
+    "titleMarkdown": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.title-and-text"
+      "component": "shared.title-and-markdown"
     }
   }
 }

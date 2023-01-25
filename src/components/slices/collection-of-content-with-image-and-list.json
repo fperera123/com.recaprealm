@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_slices_collection_of_content_with_image_and_lists",
+  "info": {
+    "displayName": "Collection of Content With Image And List",
+    "icon": "archway"
+  },
+  "options": {},
+  "attributes": {
+    "contentWithImageAndList": {
+      "type": "component",
+      "repeatable": true,
+      "component": "slices.content-with-image-and-list"
+    }
+  }
+}
