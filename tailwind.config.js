@@ -12,8 +12,10 @@ module.exports = {
         lightShade: '#EDF2F4'
       }
     },
-    plugins: [
-      // require('tw-elements/dist/plugin')
-    ]
   },
+
+  plugins: [
+    // require('tw-elements/dist/plugin'),
+    require('@tailwindcss/typography'),
+  ]
 }

@@ -18,6 +18,7 @@ import { Helmet } from "react-helmet";
 import NavbarTwo from "@/sections/Navbar/NavbarTwo";
 import HeroTwo from "@/sections/slices/Hero/HeroTwo";
 import PostsOne from "@/sections/slices/Posts/PostsOne";
+import PostDetailOne from "@/sections/slices/PostDetail/PostDetailOne";
 
 export const query = graphql`
   query GetSingleUniversal($slug: String, $locale: String){
@@ -245,7 +246,8 @@ export default function Home({
       })} */}
       <div className="max-w-[1480px] mx-auto px-5 sm:px-8">
         <HeroTwo />
-        <PostsOne/>
+        {/* <PostsOne/> */}
+        <PostDetailOne/>
       </div>
       <Footer />
       <div className="sm:w-1/3 hidden"></div>
