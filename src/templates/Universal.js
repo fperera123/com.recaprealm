@@ -15,6 +15,9 @@ import TopBar from "@/sections/TopBar";
 import GalleryOne from "@/sections/slices/Gallery/GalleryOne";
 import { GatsbyImage as Img, getSrc, getImage } from 'gatsby-plugin-image'
 import { Helmet } from "react-helmet";
+import NavbarTwo from "@/sections/Navbar/NavbarTwo";
+import HeroTwo from "@/sections/slices/Hero/HeroTwo";
+import PostsOne from "@/sections/slices/Posts/PostsOne";
 
 export const query = graphql`
   query GetSingleUniversal($slug: String, $locale: String){
@@ -230,33 +233,20 @@ export default function Home({
 }) {
   return (
     <PageWrapper>
-      <TopBar />
-      <Navbar direction={direction} items={items} />
-      {slices.map(slice => {
+      <NavbarTwo direction={direction} items={items} />
+      {/* {slices.map(slice => {
         switch (slice.__typename) {
           case "STRAPI__COMPONENT_SLICES_PARAGRAPH_WITH_TITLE":
             return <ContentPlain key={slice.id} data={slice} />
 
-          case "STRAPI__COMPONENT_SLICES_HERO_ONE":
-            return <HeroOne key={slice.id} data={slice} />
-
-          case "STRAPI__COMPONENT_SLICES_CONTENT_WITH_IMAGE":
-            return <ContentWithImage key={slice.id} data={slice} />
-
-          case "STRAPI__COMPONENT_SLICES_CONTENT_WITH_IMAGE_AND_LIST":
-            return <ContentWithImageAndList key={slice.id} data={slice} />
-
-          case "STRAPI__COMPONENT_SLICES_REVIEW_ONE":
-            return <Reviews key={slice.id} data={slice} />
-
-          case "STRAPI__COMPONENT_SLICES_GALLERY_ONE":
-            return <GalleryOne key={slice.id} data={slice} />
-
           default:
             return null;
         }
-      })}
-      <ContactOne />
+      })} */}
+      <div className="max-w-[1480px] mx-auto px-5 sm:px-8">
+        <HeroTwo />
+        <PostsOne/>
+      </div>
       <Footer />
       <div className="sm:w-1/3 hidden"></div>
     </PageWrapper>

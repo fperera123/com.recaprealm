@@ -10,6 +10,30 @@
 // @import "./react-header";
 @import "bs-theming/fonts";
 
+body {
+  overflow-wrap: break-word;
+  line-height: 1.625;
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81/var(--tw-text-opacity));
+}
+
+.dark body {
+  --tw-bg-opacity: 1;
+  background-color: rgb(23 23 23/var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255/var(--tw-text-opacity));
+}
+
+h1, h2, h3, h4, h5, h6 {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39/var(--tw-text-opacity));
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255/var(--tw-text-opacity));
+}
+
 span,
 a {
   display: inline-block;
@@ -137,7 +161,7 @@ body {
 
 .app-markdown {
 
-  h3{
+  h3 {
     font-size: 2.125rem;
     font-weight: 600;
     margin-bottom: 0.75rem;

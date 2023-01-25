@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from '@/components'
 
 const copyRightYear = () => {
-    return new Date().getFullYear() == 2018 ? '2018' : '2018 - ' + new Date().getFullYear();
+    return new Date().getFullYear() == 2023 ? '2023' : '2023 - ' + new Date().getFullYear();
 }
 
 export default function Footer() {
@@ -22,7 +22,7 @@ export default function Footer() {
 
                 <div className='flex md:inline-flex flex-col md:flex-row'>
                     <div className="text-center md:text-left p-4">
-                        © {copyRightYear()} Better Move Co. All Rights Reserved.
+                        © {copyRightYear()} Recap Realm. All Rights Reserved.
                     </div>
                     <div className="text-center md:text-right p-4">
                         A work of &nbsp;
