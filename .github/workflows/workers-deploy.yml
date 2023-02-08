@@ -19,6 +19,6 @@ jobs:
       - name: Build gatsby
         run: npm run build
       - name: Publish
-        uses: cloudflare/wrangler-action@1.20.0
+        uses: @cloudflare/wrangler@1.20.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
