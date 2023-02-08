@@ -31,7 +31,7 @@ export default function Navbar({ direction, items }) {
             <header class="py-5 px-5 sm:px-8 flex items-center  mb-20">
                 <a href="/">
                     <img
-                        class="block w-auto max-h-[26px]"
+                        class="block w-auto max-h-[45px]"
                         alt="Logo"
                         src={darkMode ? logoDark : logo}
                     />

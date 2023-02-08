@@ -8,7 +8,7 @@ const copyRightYear = () => {
 export default function Footer() {
     return (
         <>
-            <footer dir="ltr" className="text-center text-white bg-black">
+            <footer dir="ltr" className="mt-32 text-center text-white bg-black">
                 {/* <div className="container p-6">
                     <div className="">
                         <p className="flex justify-center items-center">

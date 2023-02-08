@@ -46,6 +46,9 @@ const strapiConfig = {
             basicImage: {
               populate: '*',
             },
+            postMeta: {
+              populate: '*',
+            },
           }
         },
         ogImage: {

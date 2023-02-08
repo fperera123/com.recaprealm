@@ -33,6 +33,7 @@ export const query = graphql`
     universal: strapiUniversal(slug: {eq: $slug}) {
       id
       slug
+      updatedAt
 
       metaTitle,
       metaDescription,
@@ -55,101 +56,18 @@ export const query = graphql`
       direction
 
       slices {
-        ... on STRAPI__COMPONENT_SLICES_PARAGRAPH_WITH_TITLE  {
-            __typename
-            id
-            titleMarkdown{
-                title
-                markdown{
-                  data{
-                    markdown
-                  }
-                }
-                titleHtmlTag
+        ... on STRAPI__COMPONENT_SLICES_POST_DETAILS_ONE {
+          __typename
+          id
+
+          postMeta {
+            intro
+            readingTime
+            tag {
+              strapi_json_value
             }
           }
-        ... on STRAPI__COMPONENT_SLICES_HERO_ONE {
-            __typename
-            id
-            titleParagraphImage{
-                title
-                paragraph
-                titleHtmlTag
-                image {
-                  localFile {
-                    childImageSharp {
-                      gatsbyImageData
-                    }
-                  }
-                }
-                imageAlt
-            }
-          }
-          ... on STRAPI__COMPONENT_SLICES_CONTENT_WITH_IMAGE {
-            __typename
-            id
-            contentWithImageBasicImage : basicImage {
-              imageAlt
-              imageOrder
-              imageTitle
-              image {
-                localFile {
-                  childImageSharp {
-                    gatsbyImageData
-                  }
-                }
-              }
-            }
-            contentWithImageTitleMarkdown : titleMarkdown {
-              title
-              titleHtmlTag
-              markdown {
-                data {
-                  markdown
-                }
-              }
-            }
-          }
-          ... on STRAPI__COMPONENT_SLICES_CONTENT_WITH_IMAGE_AND_LIST{
-            __typename
-            id
-            contentWithImageTitleMarkdownImage: titleMarkdownImage{
-                title
-                markdown{
-                  data{
-                    markdown
-                  }
-                }
-                titleHtmlTag
-                image {
-                    localFile {
-                      childImageSharp {
-                        gatsbyImageData
-                      }
-                    }
-                  }
-                imageAlt
-            }
-            unorderedList {
-              text
-              icon
-            }
-            sliceWidth,
-          }
-          ... on STRAPI__COMPONENT_SLICES_REVIEW_ONE {
-            __typename
-            id
-           reviewOneItem{
-            text
-            customerName
-            customerPosition
-            imageAlt
-           }
-          }
-          ... on STRAPI__COMPONENT_SLICES_GALLERY_ONE {
-            __typename
-            id
-            imageGrid{
+          basicImage {
             image {
               localFile {
                 childImageSharp {
@@ -157,10 +75,19 @@ export const query = graphql`
                 }
               }
             }
-            imageAlt
-           }
           }
+          titleMarkdown {
+            title
+            titleHtmlTag
+            markdown {
+              data {
+                markdown
+              }
+            }
+          }
+        }
       }
+
     }
   }
 `
@@ -225,7 +152,8 @@ export default function Home({
     universal:
     {
       slices,
-      direction
+      direction,
+      updatedAt,
     },
     mainMenu: {
       items
@@ -235,19 +163,18 @@ export default function Home({
   return (
     <PageWrapper>
       <NavbarTwo direction={direction} items={items} />
-      {/* {slices.map(slice => {
-        switch (slice.__typename) {
-          case "STRAPI__COMPONENT_SLICES_PARAGRAPH_WITH_TITLE":
-            return <ContentPlain key={slice.id} data={slice} />
-
-          default:
-            return null;
-        }
-      })} */}
       <div className="max-w-[1480px] mx-auto px-5 sm:px-8">
         <HeroTwo />
+        {/* {slices.map(slice => {
+          switch (slice.__typename) {
+            case "STRAPI__COMPONENT_SLICES_POST_DETAILS_ONE":
+              return <PostDetailOne key={slice.id} data={slice} updatedAt={updatedAt} />
+
+            default:
+              return null;
+          }
+        })} */}
         {/* <PostsOne/> */}
-        <PostDetailOne/>
       </div>
       <Footer />
       <div className="sm:w-1/3 hidden"></div>
