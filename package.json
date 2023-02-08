@@ -69,7 +69,7 @@
   "license": "0BSD",
   "scripts": {
     "clean-serve": "gatsby clean && npm run serve",
-    "clean-build": "gatsby clean && npm run build",
+    "publish": "gatsby clean && npm run build && wrangler publish",
     "serve": "gatsby develop -H 0.0.0.0 -p 8080 & npm run tailwind:watch",
     "build": "gatsby build",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",

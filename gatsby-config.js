@@ -73,7 +73,7 @@ const strapiConfig = {
   }],
 };
 
-const siteUrl = process.env.SITE_URL || 'https://bettermoveco.com'
+const siteUrl = process.env.SITE_URL || 'https://recaprealm.co'
 
 module.exports = {
   siteMetadata: {
@@ -145,8 +145,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Better Move Co`,
-        short_name: `BM`,
+        name: `Recap Realm`,
+        short_name: `RR`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#ffffff`,
@@ -154,23 +154,32 @@ module.exports = {
         icon: `src/assets/image/favicon-512.png`,
       },
     },
+    // {
+    //   resolve: `gatsby-plugin-google-gtag`,
+    //   options: {
+    //     trackingIds: [
+    //       "G-PP1V6F3YLT",
+    //       "G-3C6D1ZTF4F",
+    //     ],
+
+    //     gtagConfig: {
+    //       send_page_view: true,
+    //       debug_mode: true,
+    //     },
+
+    //     pluginConfig: {
+    //       head: true,
+    //     },
+    //   },
+    // },
+
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: "gatsby-plugin-google-tagmanager",
       options: {
-        trackingIds: [
-          "G-PP1V6F3YLT",
-          "G-3C6D1ZTF4F",
-        ],
-
-        gtagConfig: {
-          send_page_view: true,
-          debug_mode: true,
-        },
-
-        pluginConfig: {
-          head: true,
-        },
+        id: "GTM-WVPTJ4G",
+        includeInDevelopment: true,
+        defaultDataLayer: { platform: "gatsby" },
       },
-    }
+    },
   ],
 }

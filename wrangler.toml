@@ -6,4 +6,4 @@ usage_model = ''
 compatibility_flags = []
 workers_dev = true
 site = {bucket = "./public",entry-point = "workers-site"}
-compatibility_date = "2023-01-10"
+compatibility_date = "2023-02-08"
