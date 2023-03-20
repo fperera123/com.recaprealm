@@ -21,7 +21,7 @@ export default function Navbar({ direction, items }) {
         localStorage.setItem('darkMode', darkMode)
 
         if (!darkMode) {
-            const x = typeof dataLayer !== "undefined" ? dataLayer.push({ 'event': 'switch_to_dark_theme' }) : null;
+            // const x = typeof dataLayer !== "undefined" ? dataLayer.push({ 'event': 'switch_to_dark_theme' }) : null;
         }
     }
 
@@ -32,17 +32,17 @@ export default function Navbar({ direction, items }) {
                     class: darkMode ? "dark" : "light",
                 }}
             />
-            <header class="py-5 px-5 sm:px-8 flex items-center  mb-20">
+            <header className="py-5 px-5 sm:px-8 flex items-center  mb-20">
                 <a href="/">
                     <img
-                        class="block w-auto max-h-[45px]"
+                        className="block w-auto max-h-[45px]"
                         alt="Logo"
                         src={darkMode ? logoDark : logo}
                     />
                 </a>
-                <div class="flex gap-1 ml-auto">
+                <div className="flex gap-1 ml-auto">
                     <button
-                        class="p-1.5 cursor-pointer "
+                        className="p-1.5 cursor-pointer "
                         aria-label="Toggle light/dark themes"
                         onClick={() => applyDarkMode(!darkMode)}
                     >
@@ -50,9 +50,9 @@ export default function Navbar({ direction, items }) {
                             <svg
                                 stroke="currentColor"
                                 fill="currentColor"
-                                stroke-width="0"
+                                strokeWidth="0"
                                 viewBox="0 0 24 24"
-                                class="w-5 h-auto"
+                                className="w-5 h-auto"
                                 height="1em"
                                 width="1em"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -64,11 +64,11 @@ export default function Navbar({ direction, items }) {
                             <svg
                                 stroke="currentColor"
                                 fill="none"
-                                stroke-width="2"
+                                strokeWidth="2"
                                 viewBox="0 0 24 24"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="w-5 h-auto"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="w-5 h-auto"
                                 height="1em"
                                 width="1em"
                                 xmlns="http://www.w3.org/2000/svg"

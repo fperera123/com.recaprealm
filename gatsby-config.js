@@ -132,6 +132,10 @@ module.exports = {
           }
         }
         `,
+        excludes: [
+          `/temp/*`,
+          `/ga/*`,
+        ],
         resolveSiteUrl: () => siteUrl,
         serialize: ({ path, pageContext: { updatedAt } }) => {
           return {

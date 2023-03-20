@@ -21,28 +21,31 @@ const PostDetailOne = ({
             data: { markdown },
         },
     } = titleMarkdown;
+    console.log(tags);
     return (
         <>
             <div className="max-w-screen-md mx-auto ">
-                <div class="flex flex-wrap gap-3 items-center text-[15px]">
-                    <div class="flex flex-wrap gap-3">
-                        <a
-                            class="text-xs font-medium uppercase rounded-full py-1.5 px-2.5 border border-black text-black hover:bg-black hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black tracking-wide whitespace-nowrap"
-                            href="/category/idea"
-                        >
-                            idea
-                        </a>
+                <div className="flex flex-wrap gap-3 items-center text-[15px]">
+                    <div className="flex flex-wrap gap-3">
+                        {tags ? tags.map((tag) => {
+                            return <a
+                                className="text-xs font-medium uppercase rounded-full py-1.5 px-2.5 border border-black text-black hover:bg-black hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black tracking-wide whitespace-nowrap"
+                                haref="/category/idea"
+                            >
+                                {tag}
+                            </a>
+                        }) : null}
                     </div>
-                    <div class="text-sm data-color flex items-center ">
-                        <span class="whitespace-nowrap ">
+                    <div className="text-sm data-color flex items-center ">
+                        <span className="whitespace-nowrap ">
                             {new Date(updatedAt).toLocaleDateString("en-US", {
                                 year: "numeric",
                                 month: "short",
                                 day: "numeric",
                             })}
                         </span>
-                        <span class="px-2.5">⋅</span>
-                        <span class="whitespace-nowrap">{readingTime} min read</span>
+                        <span className="px-2.5">⋅</span>
+                        <span className="whitespace-nowrap">{readingTime} min read</span>
                     </div>
                 </div>
 
@@ -50,7 +53,7 @@ const PostDetailOne = ({
                     {title}
                 </Content.Title>
 
-                <div class="block relative bg-black/5 dark:bg-white/5 mt-12">
+                <div className="block relative bg-black/5 dark:bg-white/5 mt-12">
                     <Img
                         image={getImage(image.localFile)}
                         alt={imageAlt}
@@ -61,7 +64,7 @@ const PostDetailOne = ({
                 </div>
 
                 <div className="prose sm:prose-lg max-w-none dark:prose-invert prose-figcaption:text-sm prose-figcaption:text-center prose-figcaption:mt-2 mt-16 mb-32">
-                <ReactMarkdown className={'app-markdown'} rehypePlugins={[rehypeRaw]}  children={markdown} />
+                    <ReactMarkdown className={'app-markdown'} rehypePlugins={[rehypeRaw]} children={markdown} />
                 </div>
             </div>
         </>

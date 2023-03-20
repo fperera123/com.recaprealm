@@ -4,7 +4,7 @@ import Content from "../../contentStyles"
 
 const HeroTwo = () => {
     return <>
-        <h1 class="text-3xl sm:text-6xl sm:leading-tight max-w-screen-xl font-normal">
+        <h1 className="text-3xl sm:text-6xl sm:leading-tight max-w-screen-xl font-normal">
             <b> Welcome to Recap Realm. </b> your go-to destination for all things recapped!
         </h1>
     </>
