@@ -1,5 +1,5 @@
 module.exports = {
-    host: 'https://bettermoveco.com',
-    sitemap: 'https://bettermoveco.com/*',
+    host: 'https://recaprealm.com',
+    sitemap: 'https://recaprealm.com/*',
     policy: [{ userAgent: '*' }]
 };

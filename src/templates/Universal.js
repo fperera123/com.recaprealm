@@ -165,7 +165,7 @@ export default function Home({
       <NavbarTwo direction={direction} items={items} />
       <div className="max-w-[1480px] mx-auto px-5 sm:px-8">
         <HeroTwo />
-        {/* {slices.map(slice => {
+        {slices.map(slice => {
           switch (slice.__typename) {
             case "STRAPI__COMPONENT_SLICES_POST_DETAILS_ONE":
               return <PostDetailOne key={slice.id} data={slice} updatedAt={updatedAt} />
@@ -173,7 +173,7 @@ export default function Home({
             default:
               return null;
           }
-        })} */}
+        })}
         {/* <PostsOne/> */}
       </div>
       <Footer />

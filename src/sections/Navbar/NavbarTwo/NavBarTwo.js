@@ -20,7 +20,9 @@ export default function Navbar({ direction, items }) {
         setDarkMode(darkMode)
         localStorage.setItem('darkMode', darkMode)
 
-        dataLayer ? dataLayer.push({ 'event': 'switch_to_dark_theme' }) : null;
+        if (!darkMode) {
+            const x = typeof dataLayer !== "undefined" ? dataLayer.push({ 'event': 'switch_to_dark_theme' }) : null;
+        }
     }
 
     return (
